@@ -1,0 +1,330 @@
+#form {
+    display: none;
+}
+
+#create-dialog {
+    background-color: #f3f3f3;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    border-radius: 9px 9px 9px 9px;
+    border: 1px solid #bfbfbf;
+    padding: 10px 15px 15px 15px;
+    color: #696969;
+}
+
+#create-dialog input {
+    color: #232323;
+}
+
+#create-form-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#form-input {
+    margin: 0px 0px 10px 0px;
+}
+
+#form-input td, #tag-form-area td {
+    padding: 3px;
+}
+
+.form-label-col {
+    width: 70px;
+}
+
+.form-input-col {
+    width: 350px;
+}
+
+.form-label {
+    vertical-align: top;
+    text-align: right;
+}
+
+.tags-col {
+    width: 100px;
+}
+
+#word_spelling {
+    width: 300px;
+}
+
+#word_description {
+    width: 300px;
+    height: 80px;
+    resize: vertical;
+}
+
+#tag-text-box {
+    width: 230px;
+    color: #000000;
+}
+
+#tag-text-box.empty {
+    color: #696969;
+}
+
+#tag-list-for-form {
+    background-color: #ede #d2d2d2;
+    padding: 6px;
+    border: 1px solid #bfbfbf;
+    width: 290px;
+    height: 40px;
+    color: #232323;
+}
+
+#tag-list-1st-line {
+    margin-bottom: 6px;
+}
+
+#tag-list-for-form .tag-li {
+    background-color: #a4c5e3;
+    border: 1px solid #51727d;
+    display: inline;
+    padding: 1px 1px 1px 4px;
+    margin: 0px 3px 3px 0px;
+    font-size: 12px;
+}
+
+#tag-add-form {
+    float: left;
+}
+
+#tag-container {
+    float: left;
+}
+
+#tag-container .tag-li {
+    font-size: 12px;
+}
+
+#tag-history-btn {
+    margin-right: 10px;
+}
+
+#tag-list-for-form .tag-label {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+#tag-drop-area {
+    background-color: #ededed;
+    position: absolute;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #bfbfbf;
+    padding: 4px 7px 4px 7px;
+    width: 200px;
+    height: 155px;
+}
+
+.tag-page-navi {
+    position: absolute;
+    top: 135px;
+    padding-bottom: 10px;
+}
+
+.tag-page-navi .ellipse {
+    float: left;
+}
+
+.tag-page-navi a {
+    padding: 3px 5px;
+    margin: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    float: left;
+    font-size: 11px;
+    background-color: #a4c5e3;
+}
+
+.tag-page-navi .active_page {
+    background-color: white !important;
+    color: black !important;
+}
+
+.tag-del-btn {
+    background: url(../images/tag-x-btn.png) no-repeat 3px 3px;
+    min-width: 13px;
+    min-height: 13px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border: none;
+    overflow: hidden;
+}
+
+.tag-add-btn {
+    background: url(../images/tag-add-btn.png) no-repeat 3px 3px;
+    min-width: 13px;
+    min-height: 13px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border: none;
+    overflow: hidden;
+}
+
+#form-controls {
+    margin-top: 10px;
+    text-align: right;
+}
+
+#list {
+    margin-bottom: 10px;
+}
+
+#list .full-close .description {
+    display: none;
+}
+
+#list .full-open .description {
+    display: block;
+}
+
+#list #list-header {
+    background-image: -moz-linear-gradient(top, #FEFEFE, #F0F0F0);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FEFEFE), color-stop(1.0, #F0F0F0));
+    background-color: #F0F0F0;
+    margin: 0px 10px 0px 10px;
+    padding: 12px 10px 12px 10px;
+    -webkit-border-radius: 9px 9px 0px 0px;
+    -moz-border-radius: 9px 9px 0px 0px;
+    border-radius: 9px 9px 0px 0px;
+    border-top: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+    color: #696969;
+    font-size: 153.9%;
+}
+
+#list #list-footer {
+    background-color: #ffffff;
+    margin: 0px 10px 0px 10px;
+    padding: 45px 10px 12px 10px;
+    -webkit-border-radius: 0px 0px 9px 9px;
+    -moz-border-radius: 0px 0px 9px 9px;
+    border-radius: 0px 0px 9px 9px;
+    border-top: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #696969;
+    font-size: 153.9%;
+}
+
+.word-card {
+    background-color: #ffffff;
+    margin: 0px 10px 0px 10px;
+    padding: 5px 10px 3px 10px;
+    border-top: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+    color: #4c4c4c;
+}
+
+.word-card .spelling {
+    width: 480px;
+    margin: 0px 0px 5px 0px;
+    font-size: 138.5%;
+    float: left;
+}
+
+.word-card .description {
+    margin: 5px 0px 5px 0px;
+    font-size: 108%;
+    line-height: 19px;
+    clear: both;
+}
+
+.word-card .description.blank {
+    color: #a3a3a3;
+}
+
+.word-card-control-holder {
+    width: 110px;
+    float: right;
+    text-align: right;
+}
+
+.word-card-control {
+    font-size: 12px;
+    color: #a3a3a3;
+    display: inline;
+    margin: 0px 6px 0px 0px;
+}
+
+.word-card-control.edit-btn:hover, .word-card-control.word-del-btn:hover {
+    color: #3d3d3d;
+}
+
+.word-card-tags-holder {
+    width: 480px;
+    float: left;
+    font-size: 12px;
+    color: #a3a3a3;
+}
+
+.word-card-tags-holder .web-icon, .word-card-tags-holder ul {
+    display: inline;
+}
+
+.word-card-tags-holder .tag-li {
+    display: inline;
+    margin: 0px 5px 0px 0px;
+}
+
+#simplemodal-overlay {
+    background-color: #000;
+}
+
+#simplemodal-container a.modalCloseImg {
+    background: url(../images/x.png) no-repeat;
+    width: 25px;
+    height: 29px;
+    display: inline;
+    z-index: 3200;
+    position: absolute;
+    top: -15px;
+    right: -16px;
+    cursor: pointer;
+}
+
+#list-footer #loading-img {
+    text-align: center;
+}
+
+.level-status {
+    width: 110px;
+    height: 17px;
+    padding-top: 1px;
+    float: right;
+}
+
+.level-label {
+    color: #a3a3a3;
+    padding-left: 7px;
+}
+
+.lvProgressBar {
+    width: 60px;
+    height: 8px;
+    border: 1px solid #a3a3a3;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    float: right;
+    margin-top: 3px;
+    margin-right: 6px;
+}
+
+.ui-progressbar-value{
+    background: #B7CBE2;
+    border-right: none;
+    -webkit-border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0px 0px 4px;
+}

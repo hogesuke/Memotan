@@ -1,0 +1,45 @@
+<div id="global-nav-holder" class="absolute">
+    <div id="global-nav">
+        <ul>
+            <li>
+            <a href="./words">
+                Words
+            </a>
+            </li>
+            <li>
+            <a href="./learning?category=learning">
+                <span>
+                    Learning
+                </span>
+            </a>
+            </li>
+            <li>
+            <a href="./learning?category=test">
+                <span>
+                    Test
+                </span>
+                <span id="test-words-count">
+                    0
+                </span>
+            </a>
+            </li>
+        </ul>
+        <div id="tool-holder">
+            <ul>
+                <li>
+                <div id="create-word-btn" class="tool-btn web-icon-fontello">
+                    <div class="icon-text">l</div>
+                </div>
+                </li>
+                <li>
+                <div id="list-switch-btn" class="tool-btn web-icon-fontello open-btn">
+                    <div class="icon-text">s</div>
+                </div>
+                </li>
+                <li>
+                <%= render :partial=>"common/search" %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

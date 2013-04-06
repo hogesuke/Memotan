@@ -1,0 +1,39 @@
+<h1>登録完了！</h1>
+以下の内容で登録しました。
+<br/>
+<table border=1>
+    <tr>
+        <td>
+            ユーザー名
+        </td>
+        <td>
+            <%= @user.username %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            パスワード
+        </td>
+        <td>
+            <%= @user.password %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            メールアドレス
+        </td>
+        <td>
+            <%= @user.email %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            メール配信
+        </td>
+        <td>
+            <% if @user.dm %>
+            希望する<% else %>
+            希望しない<% end %>
+        </td>
+    </tr>
+</table>

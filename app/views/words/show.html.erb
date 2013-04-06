@@ -1,0 +1,19 @@
+<p id="notice">
+    <%= notice %>
+</p>
+<p>
+    <b>テキスト</b><br />
+    <%= @word.spelling %><br />
+    <b>説明</b><br />
+    <%= @word.description %><br />
+    <b>習熟度ID</b><br />
+    <%= @word.priority_level_id %><br />
+    <b>重要度ID</b><br />
+    <%= @word.learning_level_id %><br />		
+    <b>習熟度</b><br />
+	<%= @word.learning_level.label %><br />
+    <b>重要度</b><br />
+	<%= @word.priority_level.label %><br />
+</p>
+<br />
+<%= link_to '編集', edit_word_path(@try) %> |<%= link_to '一覧に戻る', words_path %>

@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+1:
+  tag_id: 1
+  word_id: 1
+
+2:
+  tag_id: 1
+  word_id: 2
+  
+3:
+  tag_id: 1
+  word_id: 3
+  
+4:
+  tag_id: 1
+  word_id: 4
+
+5:
+  tag_id: 1
+  word_id: 5
+  
+6:
+  tag_id: 1
+  word_id: 6
+  
+7:
+  tag_id: 1
+  word_id: 7
+  
+8:
+  tag_id: 1
+  word_id: 8
+  
+9:
+  tag_id: 1
+  word_id: 9
+  
+10:
+  tag_id: 1
+  word_id: 10
+  
+11:
+  tag_id: 1
+  word_id: 11
+  
+12:
+  tag_id: 1
+  word_id: 12
+  
+13:
+  tag_id: 1
+  word_id: 13
+  
+14:
+  tag_id: 1
+  word_id: 14
+  
+15:
+  tag_id: 1
+  word_id: 15
+  
+16:
+  tag_id: 1
+  word_id: 16
+  
+17:
+  tag_id: 1
+  word_id: 17
+  
+18:
+  tag_id: 1
+  word_id: 18
+  
+19:
+  tag_id: 1
+  word_id: 19
+  
+20:
+  tag_id: 1
+  word_id: 20
+  
+21:
+  tag_id: 1
+  word_id: 21
+  
+22:
+  tag_id: 1
+  word_id: 22
+  
+23:
+  tag_id: 2
+  word_id: 23
+  
+24:
+  tag_id: 2
+  word_id: 24
+  
+25:
+  tag_id: 2
+  word_id: 25
+  
+26:
+  tag_id: 1
+  word_id: 26
+
+27:
+  tag_id: 3
+  word_id: 25

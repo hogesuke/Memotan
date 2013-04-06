@@ -1,0 +1,35 @@
+.tag-container-navi {
+	margin: 5px 0;
+}
+
+.tag-container-navi a {
+	font-size: 12px;
+	cursor: pointer;
+	margin: 0 5px;
+	color: #333;
+}
+
+.tag-container-navi a:hover {
+	background-color: #222;
+	color: #fff;
+}
+
+.tag-container-navi a.jp-previous { margin-right: 15px; }
+.tag-container-navi a.jp-next { margin-left: 15px; }
+
+.tag-container-navi a.jp-current, a.jp-current:hover { 
+	color: #FF4242;
+	font-weight: bold;
+}
+
+.tag-container-navi a.jp-disabled, a.jp-disabled:hover {
+	color: #bbb;
+}
+
+.tag-container-navi a.jp-current, a.jp-current:hover,
+.tag-container-navi a.jp-disabled, a.jp-disabled:hover {
+	cursor: default; 
+	background: none;
+}
+
+.tag-container-navi span { margin: 0 5px; }

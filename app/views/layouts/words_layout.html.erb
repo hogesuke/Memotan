@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <%= javascript_include_tag :defaults %>
+        <%= csrf_meta_tag %>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+        <link href="/stylesheets/common-style.css" rel="stylesheet">
+        <link href="/stylesheets/words.css?2012050305" rel="stylesheet">
+        <link href="/stylesheets/jPages.css?2012050305" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>WordList</title>
+        <script type="text/javascript" src="/javascripts/jquery.js">
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.19/jquery-ui.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.url.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.simplemodal.1.4.2.min.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.bottom-1.0.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.tmpl.min.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jPages.min.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.pajinate.min.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/words.js">
+        </script>
+        <script type="text/javascript" src="/javascripts/common-script.js">
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <%= render :partial=>'common/global_navi' %>
+        </div>
+        <%= yield %>
+        <div id="footer">
+            footer
+        </div>
+    </body>
+</html>

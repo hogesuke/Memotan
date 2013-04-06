@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+1:
+  id: 1
+  label: タグ０１
+  user_id: 2
+
+2:
+  id: 2
+  label: タグ０２
+  user_id: 2
+  
+3:
+  id: 3
+  label: タグ０３
+  user_id: 2
+
+4:
+  id: 4
+  label: タグ０４
+  user_id: 1
+
+5:
+  id: 5
+  label: タグ０５
+  user_id: 1
+  
+6:
+  id: 6
+  label: タグ０６
+  user_id: 1

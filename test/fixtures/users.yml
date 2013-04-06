@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  username: admin
+  password: 8cb2237d0679ca88db6464eac60da96345513964
+  email: hoge@hogemail.com
+  dm: false
+  roles: admin
+
+two:
+  id: 2
+  username: user1
+  password: 8cb2237d0679ca88db6464eac60da96345513964
+  email: user1@hogemail.com
+  dm: ture
+  roles: member

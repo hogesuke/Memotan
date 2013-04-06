@@ -1,0 +1,126 @@
+<%= form_for(@word, :remote => true) do |f| %>
+    <div id="create-dialog">
+        <div id="create-form-title">
+            New Word
+        </div>
+        <div id="form-input">
+            <table>
+                <colgroup>
+                    <col class="form-label-col">
+                </colgroup>
+                <colgroup>
+                    <col class="form-input-col">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td id="spelling-form-label" class="form-label">
+                            word
+                        </td>
+                        <td id="spelling-form-input" class="form-input">
+                            <%= f.text_field :spelling, {:onkeypress => "return blockEnter(event)"} %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="description-form-label" class="form-label">
+                            description
+                        </td>
+                        <td id="description-form-input" class="form-input">
+                            <%= f.text_area :description, {:rows => 5} %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <div id="wikipedia-btn-area">
+                                <span class="web-icon-fontello">p</span>
+                                <input type='button' value='wikipedia' id='wikibtn'>
+                                <input type='button' value='more' id='rewikibtn'>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tag-form-hidden">
+            <input type="hidden" name="tags_label" value="">
+        </div>
+        <div id="tag-form-area">
+            <!-- tag-li template start -->
+            <script id="tmpl-of-tag-li" type="text/x-jquery-tmpl">
+                <div class="tag-li">
+                    <span class="tag-label">${label}</span>
+                    <span>
+                        <input type="button" title="削除" class="tag-del-btn" value="">
+                    </span>
+                </div>
+            </script>
+            <!-- tag-li template end -->
+            <table>
+                <colgroup>
+                    <col class="form-label-col">
+                </colgroup>
+                <colgroup>
+                    <col class="tags-col">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td class="form-label">
+                            tags
+                        </td>
+                        <td>
+                            <div id="tag-list-for-form">
+                                <div id="tag-list-1st-line">
+
+                                </div>
+                                <div id="tag-list-2nd-line">
+
+                                </div>
+
+                            </div>
+                            <script type="text/javascript">
+                                <% @word.tags.each do |f| %>
+                                    addTagToForm("<%= f.label %>");
+                                <% end %>
+                            </script>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="form-input">
+                                <div id="tag-container">
+                                    <div id="tag-history-btn">
+                                        <span class="web-icon-fontello">o</span>
+                                        <span>history</span>
+                                    </div>
+                                    <div id="tag-drop-area">
+                                        <ul class="tag-content">
+                                            <% @tags.each do |tag| %>
+                                                <li class="tag-li">
+                                                <span class="tag-label"><%= tag.label %></span>
+                                                <span>
+                                                    <input type="button" title="追加" class="tag-add-btn" value="">
+                                                </span>
+                                                </li>
+                                            <% end %>
+                                        </ul>
+                                        <div class="tag-page-navi">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tag-add-form">
+                                    <input type="text" id="tag-text-box" class="empty" value="input & press enter" default-value="input & press enter" onkeypress="return blockEnter(event)">
+                                </div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="form-controls">
+            <%= f.submit 'post', :class => 'btn' %>
+        </div>
+        <div id="status">
+        </div>
+        <div id='sending-img'>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>優先度管理画面</title>
+    </head>
+    <body>
+    	<h1>優先度の一覧</h1>
+    	<p id="notice"><%= notice %></p>
+    <table border="1">
+    	<th>ID</th>
+		<th>優先度</th>
+		<th>ラベル</th>
+            <% @priority_level.each do |priority| %>
+            <tr>
+                <td>
+                    <%= priority.id %>
+                </td>
+				<td>
+                    <%= priority.priority_level %>
+                </td>
+				<td>
+                    <%= priority.label %>
+                </td>
+				<td>
+					<%= link_to "編集", edit_priority_level_path(priority) %>
+                </td>
+				<td>
+					<%= link_to "削除", priority, :confirm => "本当に削除してもよろしいですか？", :method => :delete %>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+		<br />
+		<%= link_to "新規", new_priority_level_path %>
+    </body>
+</html>

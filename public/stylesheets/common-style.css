@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'FontelloFonts';
+    src: url("../fonts/fontello.eot");
+    src: url("../fonts/fontello.eot?#iefix") format('embedded-opentype'), url("../fonts/fontello.woff") format('woff'), url("../fonts/fontello.ttf") format('truetype'), url("../fonts/fontello.svg#fontello") format('svg');
+}
+
+.web-icon-fontello {
+    font-family: 'FontelloFonts';
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-table;
+}
+
+/* Mac OS版IEには適用しない ＼*/
+* html .clearfix { height: 1%; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/**/
+
+input button {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border :0px;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    overflow: scroll;
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: scroll;
+    background-color: #F1F1F1;
+}
+
+body {
+    font: 13px "ＭＳ Ｐゴシック", arial, helvetica, clean, sans-serif;
+    *font-size:small;
+    * font:x-small;
+}
+
+a:focus {
+    outline: none;
+}
+
+#header {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+#footer {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#primary-contents {
+    float: right;
+    width: 650px;
+}
+
+#secondary-contents {
+    float: left;
+    width: 150px;
+}
+
+#tag-list {
+    background-color: #ffffff;
+    margin: 0px 4px 0px 4px;
+    padding: 5px 5px 5px 5px;
+    border-right: 1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+}
+
+#tag-list-header {
+    background-image: -moz-linear-gradient(top, #FEFEFE, #F0F0F0);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FEFEFE), color-stop(1.0, #F0F0F0));
+    background-color: #ffffff;
+    margin: 3px 4px 0px 4px;
+    padding: 3px 5px 3px 5px;
+    -webkit-border-radius: 6px 6px 0px 0px;
+    -moz-border-radius: 6px 6px 0px 0px;
+    border-radius: 6px 6px 0px 0px;
+    color: #696969;
+    border: 1px solid #bfbfbf;
+}
+
+#tag-list-footer {
+    background-color: #ffffff;
+    margin: 0px 4px 5px 4px;
+    padding: 6px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    -moz-border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px;
+    border: 1px solid #bfbfbf;
+    border-top: none;
+}
+
+#tag-list .tag-link {
+    display: block;
+    margin: 2px 0px 2px 0px;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+#tag-list .tag-link:hover {
+    text-decoration: underline;
+    color: #2569c7;
+}
+
+#tag-list .tag-link .tag-label {
+    color: #2569c7;
+}
+
+#tag-list .tag-link .tag-count {
+    color: #393939;
+}
+
+#tag-list .selected-tag .tag-label {
+    color: #393939;
+}
+
+#tag-list .selected-tag .tag-count {
+    color: #393939;
+}
+
+#global-nav-holder {
+    background-color: #3b3b3b;
+    z-index:1;
+    width: 100%;
+    -webkit-box-shadow: 1px 1px 3px #808080;
+    -moz-box-shadow: 1px 1px 3px #808080;
+    box-shadow: 1px 1px 3px #808080;
+}
+
+#global-nav {
+    margin: 0 auto;
+    width: 800px;
+    height: 35px;
+    font-size: 14px;
+}
+
+#global-nav li {
+    list-style: none;
+    float: left;
+}
+
+#global-nav li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 13px;
+    display: block;
+}
+#global-nav li a:hover {
+    background: #666;
+}
+
+.absolute {
+    position: absolute;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+#tool-holder {
+    float: right;
+}
+
+#search-box {
+    width: 170px;
+    margin-top: 6px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#search-box.web-icon-fontello {
+    color: #696969;
+}
+
+.tool-btn {
+    background-color: #ffffff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 7px;
+    height: 25px;
+    width: 28px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    color: #3b3b3b;
+    font-size: 16px;
+}
+
+.tool-btn:hover {
+    background: -moz-linear-gradient(
+    top,
+    #fa0000 0%,
+    #d10000);
+    background: -webkit-gradient(
+    linear, left top, left bottom, 
+    from(#fa0000),
+    to(#d10000));
+    color: #ffffff;
+}
+
+.tool-btn:active {
+    background: #730000;
+}
+
+#create-word-btn .icon-text {
+    padding: 3px 5px;
+}
+
+#list-switch-btn .icon-text {
+    padding: 4px 9px;
+}
+
+#test-words-count {
+    background-color: #FFFFFF;
+    padding: 1px 2px;
+    margin-left: 2px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    color: #3b3b3b;
+    font-size: 10px;
+}

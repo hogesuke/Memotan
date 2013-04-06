@@ -1,0 +1,6 @@
+<div id="list">
+<table border="1">
+<%= render :partial => "words/wordline", :collection => @words %>
+</table>
+<%= will_paginate @words, :previous_label => "<前", :next_label => "次>" %>
+</div>

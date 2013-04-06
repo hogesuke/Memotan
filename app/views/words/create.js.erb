@@ -1,0 +1,8 @@
+$('#new-words').prepend("<%= escape_javascript(render :partial => 'word_card', :locals => {:word_card => @word}) %>");
+$('#sending-img').html('');
+
+var tagList = $("#tag-list-holder");
+tagList.after("<%= escape_javascript(render :partial => "tag_list", :locals => {:tags => @tags, :all_words_count => @words_count}) %>");
+tagList.remove();
+
+window.parent.$.modal.close();

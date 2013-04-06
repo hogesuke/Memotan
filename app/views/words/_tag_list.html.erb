@@ -1,0 +1,19 @@
+<div id="tag-list-holder">
+    <div id="tag-list-header">
+        Tag
+    </div>
+    <div id='tag-list'>
+        <a href="javascript:void(0)" class="tag-link selected-tag" tag-id="-1">
+            <span class="tag-label">すべてのワード</span>
+            <span class="tag-count"><%= "(" + all_words_count.to_s + ")" %></span>
+        </a>
+        <% tags.each do |tag| %>
+        <a href="javascript:void(0)" class="tag-link" tag-id="<%= tag.id %>">
+            <span class="tag-label"><%= tag.label %></span>
+            <span class="tag-count"><%= "(" + tag.count + ") " %></span>
+        </a>
+        <% end %>
+    </div>
+    <div id="tag-list-footer">
+    </div>
+</div>

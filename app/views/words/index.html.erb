@@ -1,0 +1,31 @@
+<div id="container">
+    <div id='primary-contents'>
+        <script type="text/javascript">
+        </script>
+        <p id='notice'>
+        </p>
+        <div id="list">
+            <div id="list-header">
+                <h2>Word List</h2>
+            </div>
+            <div id='new-words'>
+            </div>
+            <div id="pages" class="full-close">
+                <div class="list-page" page='1'>
+                    <%= render :partial=>'word_card', :collection => @words %>
+                </div>
+            </div>
+            <div id="list-footer">
+                <div id='loading-img'>
+                </div>
+            </div>
+        </div>
+        <!--modal window start-->
+        <div id="form">
+        </div>
+        <!--modal window end-->
+    </div>
+    <div id='secondary-contents'>
+        <%= render :partial => 'tag_list', :locals => {:tags => @tags, :all_words_count => @all_words_count} %>
+    </div>
+</div>
