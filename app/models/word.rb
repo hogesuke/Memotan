@@ -8,6 +8,12 @@ class Word < ActiveRecord::Base
   
   @@sql_array = YAML.load_file("./db/sql.yml")
 
+  validates :spelling,
+    :presence => true,
+    :length => { :maximum => 25 }
+  validates :description,
+    :length => { :maximum =>  256 }
+
   def levelUp
     
     before_lv = self.learning_level.level

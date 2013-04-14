@@ -4,7 +4,7 @@
         word
     </label>
     <div class='create-controls'>
-        <%= f.text_field :spelling %>
+        <%= f.text_field :spelling, { :maxlength => 25 } %>
     </div>
 </div>
 <div class='create-control-group'>
@@ -12,7 +12,7 @@
         description
     </label>
     <div class='create-controls'>
-        <%= f.text_area :description, {:rows => 5} %>
+        <%= f.text_area :description, { :rows => 5, :maxlength => 256 } %>
     </div>
     <div class='create-controls'>
         <input type='button' value='wikipediaより取得' id='wikibtn' class='btn btn-small'/><input type='button' value='さらに取得' id='rewikibtn' class='btn btn-small' />

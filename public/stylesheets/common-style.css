@@ -62,12 +62,12 @@ a:focus {
 }
 
 #footer {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
 }
 
 #container {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
 }
 
@@ -78,7 +78,7 @@ a:focus {
 
 #secondary-contents {
     float: left;
-    width: 150px;
+    width: 250px;
 }
 
 #tag-list {
@@ -152,7 +152,7 @@ a:focus {
 
 #global-nav {
     margin: 0 auto;
-    width: 800px;
+    width: 900px;
     height: 35px;
     font-size: 14px;
 }
@@ -172,6 +172,10 @@ a:focus {
     background: #666;
 }
 
+#logo {
+    margin: 5px 0px 0px 3px;
+    float: left;
+}
 .absolute {
     position: absolute;
 }

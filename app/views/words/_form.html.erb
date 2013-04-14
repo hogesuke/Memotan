@@ -17,7 +17,7 @@
                             word
                         </td>
                         <td id="spelling-form-input" class="form-input">
-                            <%= f.text_field :spelling, {:onkeypress => "return blockEnter(event)"} %>
+                            <%= f.text_field :spelling, { :onkeypress => "return blockEnter(event)", :maxlength => 25 } %>
                         </td>
                     </tr>
                     <tr>
@@ -25,7 +25,7 @@
                             description
                         </td>
                         <td id="description-form-input" class="form-input">
-                            <%= f.text_area :description, {:rows => 5} %>
+                            <%= f.text_area :description, { :rows => 5, :maxlength => 256 } %>
                         </td>
                     </tr>
                     <tr>
@@ -34,7 +34,7 @@
                         <td>
                             <div id="wikipedia-btn-area">
                                 <span class="web-icon-fontello">p</span>
-                                <input type='button' value='wikipedia' id='wikibtn'>
+                                <input type='button' value='Wikipedia' id='wikibtn'>
                                 <input type='button' value='more' id='rewikibtn'>
                             </div>
                         </td>
@@ -48,12 +48,12 @@
         <div id="tag-form-area">
             <!-- tag-li template start -->
             <script id="tmpl-of-tag-li" type="text/x-jquery-tmpl">
-                <div class="tag-li">
-                    <span class="tag-label">${label}</span>
-                    <span>
-                        <input type="button" title="削除" class="tag-del-btn" value="">
-                    </span>
-                </div>
+                <li class="tag-li">
+                    <div class="tag-item">
+                        <span class="tag-label">${label}</span>
+                        <span><input type="button" title="削除" class="tag-del-btn" value=""></span>
+                    </div>
+                </li>
             </script>
             <!-- tag-li template end -->
             <table>
@@ -70,13 +70,8 @@
                         </td>
                         <td>
                             <div id="tag-list-for-form">
-                                <div id="tag-list-1st-line">
-
-                                </div>
-                                <div id="tag-list-2nd-line">
-
-                                </div>
-
+                                <ul>
+                                </ul>
                             </div>
                             <script type="text/javascript">
                                 <% @word.tags.each do |f| %>
@@ -108,19 +103,19 @@
                                     </div>
                                 </div>
                                 <div id="tag-add-form">
-                                    <input type="text" id="tag-text-box" class="empty" value="input & press enter" default-value="input & press enter" onkeypress="return blockEnter(event)">
+                                    <input type="text" id="tag-text-box" class="empty" value="input & press enter" default-value="input & press enter" onkeypress="return blockEnter(event)" maxlength="15">
                                 </div>
                             </td>
                         </tr>
                 </tbody>
             </table>
         </div>
+        <div id="form-msg-area">
+        </div>
         <div id="form-controls">
             <%= f.submit 'post', :class => 'btn' %>
         </div>
-        <div id="status">
-        </div>
-        <div id='sending-img'>
+        <div id='form-sending-img'>
         </div>
     </div>
 <% end %>

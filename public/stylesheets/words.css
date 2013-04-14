@@ -10,6 +10,7 @@
     border: 1px solid #bfbfbf;
     padding: 10px 15px 15px 15px;
     color: #696969;
+    overflow: hidden;
 }
 
 #create-dialog input {
@@ -52,12 +53,12 @@
 
 #word_description {
     width: 300px;
-    height: 80px;
+    height: 100px;
     resize: vertical;
 }
 
 #tag-text-box {
-    width: 230px;
+    width: 220px;
     color: #000000;
 }
 
@@ -66,29 +67,33 @@
 }
 
 #tag-list-for-form {
-    background-color: #ede #d2d2d2;
-    padding: 6px;
     border: 1px solid #bfbfbf;
-    width: 290px;
-    height: 40px;
+    width: 300px;
+    min-height: 23px;
+    height: auto !important; /* IE6用 */
+    height: 23px; /* IE6用 */
+    padding: 3px 3px 0px 3px;
     color: #232323;
+    overflow: hidden;
 }
 
-#tag-list-1st-line {
-    margin-bottom: 6px;
-}
-
-#tag-list-for-form .tag-li {
+#tag-list-for-form .tag-item {
     background-color: #a4c5e3;
     border: 1px solid #51727d;
-    display: inline;
     padding: 1px 1px 1px 4px;
-    margin: 0px 3px 3px 0px;
+    display: block;
     font-size: 12px;
 }
 
-#tag-add-form {
+#tag-list-for-form .tag-li {
+    white-space: nowrap;
+    display: inline;
+    margin: 0px 3px 3px 0px;
     float: left;
+}
+
+#tag-add-form {
+    float: right;
 }
 
 #tag-container {
@@ -100,7 +105,8 @@
 }
 
 #tag-history-btn {
-    margin-right: 10px;
+    padding-top: 2px;
+    width: 70px;
 }
 
 #tag-list-for-form .tag-label {
@@ -118,6 +124,7 @@
     padding: 4px 7px 4px 7px;
     width: 200px;
     height: 155px;
+    color: #232323;
 }
 
 .tag-page-navi {
@@ -149,6 +156,8 @@
     background: url(../images/tag-x-btn.png) no-repeat 3px 3px;
     min-width: 13px;
     min-height: 13px;
+    height: auto !important; /* IE6用 */
+    height: 13px; /* IE6用 */
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -160,6 +169,8 @@
     background: url(../images/tag-add-btn.png) no-repeat 3px 3px;
     min-width: 13px;
     min-height: 13px;
+    height: auto !important; /* IE6用 */
+    height: 13px; /* IE6用 */
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -167,9 +178,26 @@
     overflow: hidden;
 }
 
+#form-msg-area {
+    padding: 5px 0px 2px 0px;
+    margin: 10px 0px 0px 70px;
+    min-height: 15px;
+    height: auto !important; /* IE6用 */
+    height: 15px; /* IE6用 */
+    width: 260px;
+    float: left;
+}
+
 #form-controls {
-    margin-top: 10px;
+    margin: 10px 0px 0px 0px;
     text-align: right;
+    width: 50px;
+    float: left;
+}
+#form-sending-img {
+    margin: 10px 0px 0px 10px;
+    height: 25px;
+    float: left;
 }
 
 #list {
@@ -219,7 +247,7 @@
 .word-card {
     background-color: #ffffff;
     margin: 0px 10px 0px 10px;
-    padding: 5px 10px 3px 10px;
+    padding: 5px 10px 5px 10px;
     border-top: 1px solid #bfbfbf;
     border-right: 1px solid #bfbfbf;
     border-left: 1px solid #bfbfbf;
@@ -228,13 +256,14 @@
 
 .word-card .spelling {
     width: 480px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 7px 0px;
     font-size: 138.5%;
     float: left;
 }
 
 .word-card .description {
-    margin: 5px 0px 5px 0px;
+    word-wrap: break-word;
+    margin: 5px 0px 7px 0px;
     font-size: 108%;
     line-height: 19px;
     clear: both;
@@ -261,6 +290,13 @@
     color: #3d3d3d;
 }
 
+.tag-icon {
+    float: left;
+    clear: both;
+    margin: 0px 8px 0px 0px;
+    color: #a3a3a3;
+}
+
 .word-card-tags-holder {
     width: 480px;
     float: left;
@@ -273,6 +309,7 @@
 }
 
 .word-card-tags-holder .tag-li {
+    white-space: nowrap;
     display: inline;
     margin: 0px 5px 0px 0px;
 }

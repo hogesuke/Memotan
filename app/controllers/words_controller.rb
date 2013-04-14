@@ -5,15 +5,16 @@ class WordsController < ApplicationController
   layout "words_layout"
   before_filter LoginFilter.new
   
-  PER_PAGE = 3
+  PER_PAGE = 20
 
   def index
     
     @words = Word.where(:user_id => session[:usr]).order('created_at DESC').paginate(:page => 1, :per_page => PER_PAGE)
     @all_words_count = get_word_count
-    @test_words_count = Word.select_learning_words("test", "all", true, session[:usr])[0]["count"]
     @tags = Tag.get_tags(session[:usr])
-    @max_level = LearningLevel.maximum(:level)
+    # 最小リリースのためコメントアウト 2013/04/14
+    # @test_words_count = Word.select_learning_words("test", "all", true, session[:usr])[0]["count"]
+    # @max_level = LearningLevel.maximum(:level)
   end
   
   def list
@@ -30,10 +31,10 @@ class WordsController < ApplicationController
     
     words = cond.paginate(:page => params[:page], :per_page => PER_PAGE)
     if words.empty?
-      render :json => {:status => "completed"} and return
+      render :json => { :status => "completed" } and return
     end
     html = render_to_string :partial => 'word_card', :collection => words
-    render :json => {:html => html, :page => params[:page], :status => "success"}
+    render :json => { :html => html, :page => params[:page], :status => "success" }
     
   end
   
@@ -65,7 +66,7 @@ class WordsController < ApplicationController
     # TODO MySQLのinsert時のデフォルトでいいのでは？
     learning_level = LearningLevel.where(:level => 1);
     if learning_level.empty?
-      render :partial => 'error', :locals => {:msg => '登録に失敗しました。'} and return
+      render :partial => 'error', :locals => {:msg => '単語の登録に失敗しました。'} and return
     end
     
     @word = Word.new(params[:word])
@@ -74,10 +75,13 @@ class WordsController < ApplicationController
     
     Word.transaction do
       if !@word.save
-        render :partial => 'error', :locals => {:msg => '登録に失敗しました。'} and return
+        render :partial => 'error', :locals => {:msg => '単語の登録に失敗しました。'} and return
       end
       
       new_tags = params[:tags_label].gsub(/　/, " ").strip.split(/\s+/).uniq
+      if new_tags.size > 5 then
+        render :partial => 'error', :locals => {:msg => '単語の登録に失敗しました。タグが６個以上選択されています。'} and return
+      end
       add_tags(@word, new_tags)
     end
     
@@ -85,7 +89,7 @@ class WordsController < ApplicationController
     @words_count = get_word_count
     
   rescue => e
-    render :partial => 'error', :locals => {:msg => '登録に失敗しました。' + e.message}
+    render :partial => 'error', :locals => {:msg => '単語の登録に失敗しました。' + e.message}
   end
   
   def update

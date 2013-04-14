@@ -3,6 +3,7 @@
         <div class="spelling">
             <%= word_card.spelling %>
         </div>
+        <!-- 2013/04/09 最小リリースのためコメントアウト
         <div class="level-status">
             <span class="level-label">
                 Lv.<%= word_card.learning_level.level %>
@@ -10,6 +11,7 @@
             <div class="lvProgressBar">
             </div>
         </div>
+        -->
         <% description = word_card.description %>
         <div class="description<%= description.blank? || description == "NULL" ? " blank" : "" %>">
             <% if description.blank? || description == "NULL" %>
@@ -19,24 +21,28 @@
             <% end %>
         </div>
     </div>
-    <div class="word-card-tags-holder">
-        <span class="web-icon-fontello">1</span>
-        <ul>
-            <% word_card.tags.each do |t| %>
-                <li class="tag-li">
-                <%= t.label %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-    <div class="word-card-control-holder">
-        <div class="word-card-control edit-btn">
-            <span class="web-icon-fontello">7</span>
-            <span>Edit</span>
+    <div class="word-card-footer">
+        <div class="tag-icon">
+            <span class="web-icon-fontello">1</span>
         </div>
-        <div class="word-card-control word-del-btn">
-            <span class="web-icon-fontello">6</span>
-            <span>Delete</span>
+        <div class="word-card-tags-holder">
+            <ul>
+                <% word_card.tags.each do |t| %>
+                    <li class="tag-li">
+                    <%= t.label %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="word-card-control-holder">
+            <div class="word-card-control edit-btn">
+                <span class="web-icon-fontello">7</span>
+                <span>Edit</span>
+            </div>
+            <div class="word-card-control word-del-btn">
+                <span class="web-icon-fontello">6</span>
+                <span>Delete</span>
+            </div>
         </div>
     </div>
 </div>
