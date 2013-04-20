@@ -168,10 +168,43 @@ $(function(){
     });
 
     /**
-     * wordの登録ボタンにclickイベントをバインド。
+     * word登録Formの登録ボタンにclickイベントをバインド。
      */
     $('#word_submit').live("click", function(){
         $('#form-sending-img').html('<img src="/images/form-loader.gif">');
+        $('#form-msg-area').empty();
+        $('#create-dialog .validation-error').removeClass('validation-error');
+
+        var msgArray = new Array();
+
+        var wordSpell = $('#word_spelling').val();
+        if (!wordSpell) {
+
+            msgArray.push('単語が入力されていません。');
+            $('#word_spelling').addClass('validation-error');
+        } else if (25 < wordSpell.length) {
+
+            msgArray.push('単語は25文字以内で入力してください。');
+            $('#word_spelling').addClass('validation-error');
+        }
+
+        var wordDescription = $('#word_description').val();
+        if (wordDescription && 256 < wordDescription.length) {
+
+            msgArray.push('意味は256文字以内で入力してください。');
+            $('#word_description').addClass('validation-error');
+        }
+
+        if (msgArray.length) {
+            
+            var $msgDom = $('<ul>');
+            $.each(msgArray, function(i, value) {
+                $msgDom.append($('<li>').text(value));
+            });
+            $('#form-msg-area').append($msgDom);
+            $('#form-sending-img').empty();
+            return false;
+        }
 
          var tagsLabel = "";
          $("#tag-list-for-form .tag-li .tag-label").each(function(){
@@ -181,7 +214,7 @@ $(function(){
     });
 
     /**
-     * wikipediaボタンにclickイベントをバインド。
+     * Wikipediaボタンにclickイベントをバインド。
      */
     $('#wikibtn').live("click", function(){
         $('#form-msg-area').html('Wikipediaより取得中...');
@@ -245,6 +278,7 @@ $(function(){
      * タグ入力テキストボックスにkeypressイベントをバインド。
      */
     $("#tag-text-box").live("keypress", function(e) {
+        $("#tag-text-box").removeClass("validation-error");
         // Enterキー押下時の処理
         if(e.which == 13) {
             var $tagItem = $(".tag-item");
@@ -256,10 +290,14 @@ $(function(){
                 return;
             }
             if (label.match(/\s/)) {
-                return $("#form-msg-area").text("タグにはスペースを使用できません。");
+                $("#form-msg-area").text("タグにはスペースを使用できません。");
+                $("#tag-text-box").addClass("validation-error");
+                return;
             }
             if (isAlreadySelectedTag(label, $("#tag-list-for-form .tag-li .tag-label"))) {
-                return $("#form-msg-area").text("すでに選択されているタグです。");
+                $("#form-msg-area").text("すでに選択されているタグです。");
+                $("#tag-text-box").addClass("validation-error");
+                return;
             }
 
             addTagToForm(label);
@@ -323,6 +361,7 @@ $(function(){
     
         $(window).unbind("bottom");
         $('#list #pages').empty();
+        $('#new-words').empty();
         
         $(".selected-tag").removeClass("selected-tag");
         $(this).addClass("selected-tag");

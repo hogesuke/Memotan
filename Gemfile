@@ -13,6 +13,14 @@ gem 'ruby-debug19'
 gem 'mongrel'
 gem 'rspec-rails'
 gem 'factory_girl_rails', '~> 3.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+group :deployment do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

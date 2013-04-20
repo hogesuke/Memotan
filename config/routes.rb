@@ -3,6 +3,8 @@ ToriatamaAlpha::Application.routes.draw do
   resources :priority_levels
   resources :learning_levels
 
+  root :to => 'words#index'
+
   resources :levelup_intervals do
     collection do
       get "select_max_level"
@@ -15,17 +17,20 @@ ToriatamaAlpha::Application.routes.draw do
       get "logout"
     end
   end
+
   resources :words do
     collection do
       get "list"
       get "search"
     end
   end
+
   resources :users do
     member do
       get "complete"
     end
   end
+
   resources :learning do
     collection do
       post "reflect_result"
@@ -34,6 +39,11 @@ ToriatamaAlpha::Application.routes.draw do
       get "count_all_test_words"
     end
   end
+
+  #OmniAuth
+  match "/auth/:provider/callback" => "sessions#callback"
+  match "/logout" => "sessions#destroy", :as => :logout
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

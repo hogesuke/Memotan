@@ -1,15 +1,20 @@
 <p style="color: Red">
     <%= @error %>
 </p>
+<div id="user_nav">
+    <%= link_to "Twitterでlogin","/auth/twitter" %>
+    <%= link_to "facebookでlogin", "/auth/facebook" %>
+</div>
+
 <%= form_tag :action => "auth" do %>
-<div class="field">
+<div class="">
     <label>
         ユーザー名：
         <br/>
         <%= text_field_tag(:username, "", { :size => 20 }) %>
     </label>
 </div>
-<div class = "field">
+<div class = "">
     <label>
         パスワード：
         <br/>

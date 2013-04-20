@@ -9,7 +9,7 @@
     border-radius: 9px 9px 9px 9px;
     border: 1px solid #bfbfbf;
     padding: 10px 15px 15px 15px;
-    color: #696969;
+    color: #595959;
     overflow: hidden;
 }
 
@@ -47,6 +47,10 @@
     width: 100px;
 }
 
+.validation-error {
+    background-color: #F9ACB8;
+}
+
 #word_spelling {
     width: 300px;
 }
@@ -63,7 +67,7 @@
 }
 
 #tag-text-box.empty {
-    color: #696969;
+    color: #595959;
 }
 
 #tag-list-for-form {
@@ -224,7 +228,7 @@
     border-top: 1px solid #bfbfbf;
     border-right: 1px solid #bfbfbf;
     border-left: 1px solid #bfbfbf;
-    color: #696969;
+    color: #595959;
     font-size: 153.9%;
 }
 
@@ -240,7 +244,7 @@
     border-left: 1px solid #bfbfbf;
     border-bottom: 1px solid #bfbfbf;
     color: #ffffff;
-    text-shadow: 1px 1px 0px #696969;
+    text-shadow: 1px 1px 0px #595959;
     font-size: 153.9%;
 }
 
@@ -251,7 +255,8 @@
     border-top: 1px solid #bfbfbf;
     border-right: 1px solid #bfbfbf;
     border-left: 1px solid #bfbfbf;
-    color: #4c4c4c;
+    /*color: #4c4c4c;*/
+    color: #3b3b3b;
 }
 
 .word-card .spelling {
@@ -270,7 +275,7 @@
 }
 
 .word-card .description.blank {
-    color: #a3a3a3;
+    color: #969696;
 }
 
 .word-card-control-holder {
@@ -281,27 +286,27 @@
 
 .word-card-control {
     font-size: 12px;
-    color: #a3a3a3;
+    color: #969696;
     display: inline;
     margin: 0px 6px 0px 0px;
 }
 
 .word-card-control.edit-btn:hover, .word-card-control.word-del-btn:hover {
-    color: #3d3d3d;
+    color: #DB0000;
 }
 
 .tag-icon {
     float: left;
     clear: both;
     margin: 0px 8px 0px 0px;
-    color: #a3a3a3;
+    color: #969696;
 }
 
 .word-card-tags-holder {
     width: 480px;
     float: left;
     font-size: 12px;
-    color: #a3a3a3;
+    color: #969696;
 }
 
 .word-card-tags-holder .web-icon, .word-card-tags-holder ul {
@@ -342,14 +347,14 @@
 }
 
 .level-label {
-    color: #a3a3a3;
+    color: #969696;
     padding-left: 7px;
 }
 
 .lvProgressBar {
     width: 60px;
     height: 8px;
-    border: 1px solid #a3a3a3;
+    border: 1px solid #969696;
     -webkit-border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
