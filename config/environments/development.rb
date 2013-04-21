@@ -22,5 +22,8 @@ ToriatamaAlpha::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  #ログレベルの設定
+  config.log_lebel = :error
 end
 
