@@ -46,7 +46,7 @@ html {
 }
 
 body {
-    font: 13px "ＭＳ Ｐゴシック", arial, helvetica, clean, sans-serif;
+    font-family: 13px 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
     *font-size:small;
     * font:x-small;
 }
