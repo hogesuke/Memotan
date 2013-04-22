@@ -60,7 +60,7 @@ WordLoader.prototype.loadWords = function(){
         timeout: 5000,
         success: action(this.increasePageNum),
         error: function(){
-            $('#main-msg-area').html('サーバエラーが発生しました。');
+            $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。再度、ページを更新してください。');
         },
         beforeSend: function(xhr){
             xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
@@ -89,6 +89,7 @@ $(function(){
     wordLoader = new WordLoader(2);
 
     bindBottomAction();
+    $().toastmessage({ position: 'top-center', stayTime: 5000 });
 
     /**
      * wordの新規作成ボタンにclickイベントをバインド。
@@ -135,7 +136,7 @@ $(function(){
                 $('#rewikibtn').attr('disabled', true);
             },
             error: function(){
-                $('#main-msg-area').html('単語の取得に失敗しました。一度、ページを更新してください。');
+                $().toastmessage('showErrorToast', '単語の取得に失敗しました。一度、ページを更新してください。');
             },
             beforeSend: function(xhr){
                 xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
@@ -163,10 +164,9 @@ $(function(){
                     });
                     return;
                 }
-                $('#main-msg-area').html('単語の削除に失敗しました。一度、ページを更新してください。');
             },
             error: function(){
-                $('#main-msg-area').html('サーバエラーが発生しました。');
+                $().toastmessage('showErrorToast', '単語の削除に失敗しました。一度、ページを更新してください。');
             },
             beforeSend: function(xhr){
                 xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
