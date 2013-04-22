@@ -1,7 +1,7 @@
 <%= form_for(@word, :remote => true) do |f| %>
     <div id="create-dialog">
         <div id="create-form-title">
-            単語の登録
+            ワードの登録
         </div>
         <div id="form-input">
             <table>
@@ -14,7 +14,7 @@
                 <tbody>
                     <tr>
                         <td id="spelling-form-label" class="form-label">
-                            単語
+                            ワード
                         </td>
                         <td id="spelling-form-input" class="form-input">
                             <%= f.text_field :spelling, { :onkeypress => "return blockEnter(event)" } %>
@@ -22,7 +22,7 @@
                     </tr>
                     <tr>
                         <td id="description-form-label" class="form-label">
-                            意味
+                            説明
                         </td>
                         <td id="description-form-input" class="form-input">
                             <%= f.text_area :description, { :rows => 5 } %>
