@@ -1,29 +1,28 @@
 ToriatamaAlpha::Application.routes.draw do
 
-  resources :priority_levels
-  resources :learning_levels
+  #resources :priority_levels
+  #resources :learning_levels
 
   root :to => 'words#index'
 
-  resources :levelup_intervals do
-    collection do
-      get "select_max_level"
-    end
- end
+ # resources :levelup_intervals do
+ #   collection do
+ #     get "select_max_level"
+ #   end
+ # end
 
-  resources :login do
-    collection do
-      post "auth"
-      get "logout"
-    end
-  end
+  match 'login/', :to => 'login#index', :via => :get
+  match 'login/logout', :to => 'login#logout', :via => :get
+  match 'login/auth', :to => 'login#auth', :via => :post
 
-  resources :words do
-    collection do
-      get "list"
-      get "search"
-    end
-  end
+  match 'words/', :to => 'words#index', :via => :get
+  match 'words/new', :to => 'words#new', :via => :post
+  match 'words/:id/edit', :to => 'words#edit', :via => :post
+  match 'words/:id', :to => 'words#destroy', :via => :delete
+  match 'words/', :to => 'words#create', :via => :post
+  match 'words/:id', :to => 'words#update', :via => :put, :as => 'word'
+  match 'words/list', :to => 'words#list', :via => :post
+  match 'words/search', :to => 'words#search', :via => :post
 
   resources :users do
     member do
@@ -31,20 +30,22 @@ ToriatamaAlpha::Application.routes.draw do
     end
   end
 
-  resources :learning do
-    collection do
-      post "reflect_result"
-      get "get_words"
-      get "count_words_at_tag"
-      get "count_all_test_words"
-    end
-  end
+ # resources :learning do
+ #   collection do
+ #     post "reflect_result"
+ #     get "get_words"
+ #     get "count_words_at_tag"
+ #     get "count_all_test_words"
+ #   end
+ # end
 
   #OmniAuth
   match "/auth/:provider/callback" => "sessions#callback"
   match "/logout" => "sessions#destroy", :as => :logout
 
-  
+  #404
+  match '*a', :to => 'errors#routing'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   

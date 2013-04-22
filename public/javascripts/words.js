@@ -55,12 +55,15 @@ WordLoader.prototype.loadWords = function(){
 
     return $.ajax({
         url: "/words/list",
-        type: 'GET',
+        type: 'POST',
         data: param,
         timeout: 5000,
         success: action(this.increasePageNum),
         error: function(){
             $('#main-msg-area').html('サーバエラーが発生しました。');
+        },
+        beforeSend: function(xhr){
+            xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
         }
     });
     /** 2013/04/09 最小リリースのためコメントアウト
@@ -80,7 +83,7 @@ var wordLoader;
  * Wordリスト画面初期表示処理
  */
 $(function(){
-    countAllTestWords();
+
     /** 2013/04/09 最小リリースのためコメントアウト **/
     // loadLevelProgressBar(1);
     wordLoader = new WordLoader(2);
@@ -93,10 +96,10 @@ $(function(){
     $('#create-word-btn').click(function(){
         $.ajax({
             url: '/words/new',
-            type: 'GET',
+            type: 'POST',
             timeout: 5000,
             success: function(data){
-                $form = $("#form");
+                var $form = $("#form");
                 $form.empty();
                 $form.html(data.html);
                 $form.modal();
@@ -105,6 +108,9 @@ $(function(){
             error: function(){
                 // TODO エラーメッセージを手直しすること。
                 $('#form-msg-area').html('単語の登録に失敗しました。');
+            },
+            beforeSend: function(xhr){
+                xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
             }
         }).then(function(){
             bindPagingTagList();
@@ -119,7 +125,7 @@ $(function(){
 
         $.ajax({
             url: '/words/' + edited_id + '/edit',
-            type: 'GET',
+            type: 'POST',
             timeout: 5000,
             success: function(data){
                 var $form = $("#form");
@@ -130,6 +136,9 @@ $(function(){
             },
             error: function(){
                 $('#main-msg-area').html('単語の取得に失敗しました。一度、ページを更新してください。');
+            },
+            beforeSend: function(xhr){
+                xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
             }
         }).then(function(){
             bindPagingTagList();
@@ -553,49 +562,6 @@ function bindBottomAction(searchKey){
                 obj.data('loading', false);
             });
         }
-    });
-}
-
-/**
- * Ajaxでwordリストを取得する。
- */
-function ajaxList(nextPageNum, tag_id, searchKey){
-
-    $('#loading-img').html('<img src="/images/ajax-loader.gif">');
-    
-    var paramData = {
-        'page': nextPageNum
-    };
-    
-    // 引数で指定されたtag_idが-1の場合、タグによる絞り込みを行わない。
-    if (tag_id != -1) {
-        paramData['tag_id'] = tag_id;
-    }
-    
-    if (typeof searchKey !== "undefined") {
-        paramData['search_key'] = searchKey;
-    }
-    
-    return $.ajax({
-        url: "/words/list",
-        type: 'GET',
-        data: paramData,
-        timeout: 5000,
-        success: function(data){
-            if (data.status == 'completed') {
-                $(window).unbind("bottom");
-                $('#loading-img').html("");
-                return;
-            }
-            $('#list #pages').append("<div class='list-page' page='" + nextPageNum + "'></div>");
-            $('[page=' + nextPageNum + ']').append(data.html);
-            $('#loading-img').html("");
-        },
-        error: function(){
-            $('#main-msg-area').html('サーバエラーが発生しました。');
-        }
-    }).then(function(){
-        loadLevelProgressBar(nextPageNum);
     });
 }
 
