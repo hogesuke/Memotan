@@ -15,12 +15,29 @@
                 </div>
                 </li>
                 <li>
-                <div id="list-switch-btn" class="tool-btn web-icon-fontello open-btn">
-                    <div class="icon-text">s</div>
-                </div>
+                    <div id="list-switch-btn" class="tool-btn web-icon-fontello open-btn">
+                        <div class="icon-text">s</div>
+                    </div>
                 </li>
                 <li>
-                <%= render :partial=>"common/search" %>
+                    <%= render :partial=>"common/search" %>
+                </li>
+                <li>
+                    <div id="user-info">
+                        <div id="user-icon">
+                            <% if session[:provider] == "twitter" then %>
+                                <img src="http://api.dan.co.jp/twicon/<%= session[:name] %>/mini">
+                            <% else %>
+                                <img src="https://graph.facebook.com/<%= session[:name] %>/picture">
+                            <% end %>
+                        </div>
+                        <div id="user-name">
+                            <%= session[:name] %>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <%= link_to "ログアウト", { :controller => "login", :action => 'logout' } %>
                 </li>
             </ul>
         </div>

@@ -151,9 +151,15 @@ a:focus {
     -webkit-border-radius: 6px 6px 6px 6px;
     -moz-border-radius: 6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px;
-    color: #696969;
+    color: #393939;
     border: 1px solid #bfbfbf;
 }
+
+#about a {
+    text-decoration: none;
+    color: #393939;
+}
+
 #global-nav-holder {
     background-color: #2b2b2b;
     z-index:1;
@@ -202,9 +208,11 @@ a:focus {
 }
 
 #search-box {
-    width: 170px;
-    margin-top: 6px;
+    width: 120px;
+    height: 17px;
+    margin-top: 5px;
     margin-left: 5px;
+    padding-left: 3px;
     font-size: 14px;
 }
 
@@ -259,4 +267,25 @@ a:focus {
     border-radius: 3px 3px 3px 3px;
     color: #3b3b3b;
     font-size: 10px;
+}
+
+#user-info {
+    margin: 4px 10px 0px 15px;
+    overflow: hidden;
+}
+
+#user-icon {
+    margin-right: 8px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
+    image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
+}
+
+#user-name {
+    padding-top: 5px;
+    float: left;
+    color: #ffffff;
+    font-size: 14px;
 }

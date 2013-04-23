@@ -11,13 +11,18 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
  
     if user
-       # 既存のユーザ情報があった場合　ルートに遷移させます
+       # 既存のユーザ情報があった場合、ルートに遷移させる
        session[:usr] = user.id
-       redirect_to root_url, :notice => "ログインしました。"
+       session[:provider] = user.provider
+       session[:name] = user.name
+       redirect_to root_url
     else
        # Userモデルに:providerと:uidが無い場合（外部認証していない）、保存してからルートへ遷移させる
        User.create_with_omniauth(auth)
-       redirect_to root_url, :notice => "#{auth["info"]["name"]}さんの#{auth["provider"]}アカウントと接続しました。"
+       session[:usr] = auth["uid"]
+       session[:provider] = auth["provider"]
+       session[:name] = auth["info"]["name"]
+       redirect_to root_url
     end
  
   end

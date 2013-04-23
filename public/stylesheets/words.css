@@ -324,14 +324,14 @@
 }
 
 #simplemodal-container a.modalCloseImg {
-    background: url(../images/x.png) no-repeat;
+    background: url(../images/close-form.png) no-repeat;
     width: 25px;
     height: 29px;
     display: inline;
     z-index: 3200;
     position: absolute;
-    top: -15px;
-    right: -16px;
+    top: 5px;
+    right: 10px;
     cursor: pointer;
 }
 
