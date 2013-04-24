@@ -164,6 +164,7 @@ a:focus {
     background-color: #2b2b2b;
     z-index:1;
     width: 100%;
+    padding-top: 3px;
     -webkit-box-shadow: 1px 1px 3px #808080;
     -moz-box-shadow: 1px 1px 3px #808080;
     box-shadow: 1px 1px 3px #808080;
