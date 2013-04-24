@@ -30,7 +30,7 @@ WordLoader.prototype.loadWords = function(){
         param['tag_id'] = this.tagId;
     }
     
-    if (typeof searchKey !== "undefined") {
+    if (typeof this.searchKey !== "undefined") {
         param['search_key'] = this.searchKey;
     }
 

@@ -38,9 +38,9 @@ $(function(){
             $(".selected-tag").removeClass("selected-tag");
             $("[tag-id=-1]").addClass("selected-tag");
 
-            var searchKey = $("#search-box").val();
-            ajaxList(1, -1, searchKey).then(function(){
-                bindBottomAction(searchKey);
+            wordLoader = new WordLoader(1, -1, $("#search-box").val());
+            wordLoader.loadWords().then(function(){
+                bindBottomAction();
             });
         }
     });
