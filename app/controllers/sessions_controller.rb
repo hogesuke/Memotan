@@ -13,15 +13,17 @@ class SessionsController < ApplicationController
     if user
        # 既存のユーザ情報があった場合、ルートに遷移させる
        session[:usr] = user.id
+       session[:uid] = user.uid
        session[:provider] = user.provider
        session[:name] = user.name
        redirect_to root_url
     else
        # Userモデルに:providerと:uidが無い場合（外部認証していない）、保存してからルートへ遷移させる
-       User.create_with_omniauth(auth)
-       session[:usr] = auth["uid"]
+       user = User.create_with_omniauth(auth)
+       session[:usr] = user.id
+       session[:uid] = auth["uid"]
        session[:provider] = auth["provider"]
-       session[:name] = auth["info"]["name"]
+       session[:name] = auth["info"]["nickname"]
        redirect_to root_url
     end
  

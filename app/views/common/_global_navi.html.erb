@@ -28,7 +28,7 @@
                             <% if session[:provider] == "twitter" then %>
                                 <img src="http://api.dan.co.jp/twicon/<%= session[:name] %>/mini">
                             <% else %>
-                                <img src="https://graph.facebook.com/<%= session[:usr] %>/picture">
+                                <img src="https://graph.facebook.com/<%= session[:uid] %>/picture">
                             <% end %>
                         </div>
                         <div id="user-name">
