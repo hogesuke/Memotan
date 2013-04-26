@@ -278,6 +278,9 @@ a:focus {
 #user-icon {
     margin-right: 8px;
     float: left;
+}
+
+#user-icon img {
     max-width: 25px;
     max-height: 25px;
     -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
