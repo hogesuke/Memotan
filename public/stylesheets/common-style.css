@@ -278,8 +278,8 @@ a:focus {
 #user-icon {
     margin-right: 8px;
     float: left;
-    width: 25px;
-    height: 25px;
+    max-width: 25px;
+    max-height: 25px;
     -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
     image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
 }
