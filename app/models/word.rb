@@ -14,40 +14,56 @@ class Word < ActiveRecord::Base
   validates :description,
     :length => { :maximum =>  256 }
 
-  def levelUp
-    
-    before_lv = self.learning_level.level
+  def self.level_up(word_id, user_id)
+    word = self.where(:id => word_id, :user_id => user_id)
+
+    if word.size == 0
+      raise "ワードを取得できませんでした。"
+    end
+
+    before_lv = word[0].learning_level.level
     max_lv = LearningLevel.maximum(:level)
     
     if before_lv >= max_lv
-      return
+      return before_lv
     end
     
-    after_lv = LearningLevel.where({:level => before_lv + 1})
+    after_lv = LearningLevel.where(:level => before_lv + 1)
     if after_lv.size != 1
       raise "学習レベルのレコードを一意に特定できません"
     end
     
-    self.learning_level = after_lv[0]
-    self.last_level_changed_at = Time.now
+    word[0].learning_level = after_lv[0]
+    word[0].last_level_changed_at = Time.now
+    word[0].save!
+
+    return after_lv[0].level
   end
   
-  def levelDown
-    
-    before_lv = self.learning_level.level
+  def self.level_down(word_id, user_id)
+     word = self.where(:id => word_id, :user_id => user_id)
+
+    if word.size == 0
+      raise "ワードを取得できませんでした。"
+    end
+
+    before_lv = word[0].learning_level.level
     min_lv = LearningLevel.minimum(:level)
     
     if before_lv <= min_lv
-      return
+      return before_lv
     end
     
-    after_lv = LearningLevel.where({:level => before_lv - 1})
+    after_lv = LearningLevel.where(:level => before_lv - 1)
     if after_lv.size != 1
       raise "学習レベルのレコードを一意に特定できません"
     end
     
-    self.learning_level = after_lv[0]
-    self.last_level_changed_at = Time.now
+    word[0].learning_level = after_lv[0]
+    word[0].last_level_changed_at = Time.now
+    word[0].save!
+
+    return after_lv[0].level
   end
 
   def self.select_learning_words(category, tag_id, isCount, user_id)

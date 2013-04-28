@@ -279,9 +279,9 @@
 }
 
 .word-card-control-holder {
-    width: 120px;
+    width: 110px;
     float: right;
-    text-align: right;
+    text-align: left;
 }
 
 .word-card-control {
@@ -348,19 +348,35 @@
 
 .level-label {
     color: #969696;
-    padding-left: 7px;
 }
 
 .lvProgressBar {
-    width: 60px;
-    height: 8px;
+    float: right;
+    width: 50px;
+    height: 9px;
     border: 1px solid #969696;
     -webkit-border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
-    float: right;
     margin-top: 3px;
-    margin-right: 6px;
+}
+
+.level-up-btn {
+    float: right;
+    margin-left: 1px;
+    height: 14px;
+    width: 12px;
+    background: url(../images/level_up.png) no-repeat 3px 3px;
+    cursor: pointer;
+}
+
+.level-down-btn {
+    float: right;
+    margin-right: 1px;
+    height: 14px;
+    width: 12px;
+    background: url(../images/level_down.png) no-repeat 0px 3px;
+    cursor: pointer;
 }
 
 .ui-progressbar-value{

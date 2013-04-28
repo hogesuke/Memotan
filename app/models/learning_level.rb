@@ -12,4 +12,8 @@ class LearningLevel < ActiveRecord::Base
     :uniqueness => true,
     :length => { :maximum => 10}
 
+  def self.select_max_level
+    self.maximum(:level)
+  end
+
 end

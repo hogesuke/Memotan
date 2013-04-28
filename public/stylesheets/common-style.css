@@ -26,8 +26,14 @@
 .clearfix { display: block; }
 /**/
 
-input button {
+input, button {
     outline: none;
+}
+
+input[type="button"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+    border: 0px;
 }
 
 button::-moz-focus-inner {
@@ -60,11 +66,6 @@ a:focus {
     position: relative;
     height: 50px;
     width: 100%;
-}
-
-#footer {
-    width: 900px;
-    margin: 0 auto;
 }
 
 #container {
@@ -231,24 +232,51 @@ a:focus {
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     border-radius: 3px 3px 3px 3px;
-    color: #3b3b3b;
-    font-size: 16px;
-}
-
-.tool-btn:hover {
-    background: -moz-linear-gradient(
-    top,
-    #fa0000 0%,
-    #d10000);
-    background: -webkit-gradient(
-    linear, left top, left bottom, 
-    from(#fa0000),
-    to(#d10000));
-    color: #ffffff;
 }
 
 .tool-btn:active {
     background: #730000;
+}
+
+#create-word-btn {
+    background:
+        url(../images/WriteNew.png) no-repeat 6px 3px,
+        #ffffff;
+    cursor: pointer;
+}
+
+#create-word-btn:hover {
+    background:
+        url(../images/WriteNew_hover.png) no-repeat 6px 3px,
+        #e00000;
+}
+
+#list-switch-btn {
+    cursor: pointer;
+}
+
+#list-switch-btn.open-btn {
+    background:
+        url(../images/Book_open.png) no-repeat 4px 3px,
+        #ffffff;
+}
+
+#list-switch-btn.close-btn {
+    background:
+        url(../images/Book_close.png) no-repeat 6px 3px,
+        #ffffff;
+}
+
+#list-switch-btn.open-btn:hover {
+    background:
+        url(../images/Book_open_hover.png) no-repeat 4px 3px,
+        #e00000;
+}
+
+#list-switch-btn.close-btn:hover {
+    background:
+        url(../images/Book_close_hover.png) no-repeat 6px 3px,
+        #e00000;
 }
 
 #create-word-btn .icon-text {
@@ -280,7 +308,7 @@ a:focus {
     float: left;
 }
 
-#user-icon img {
+#user-icon {
     max-width: 25px;
     max-height: 25px;
     -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
@@ -292,4 +320,210 @@ a:focus {
     float: left;
     color: #ffffff;
     font-size: 14px;
+}
+
+#login-contents {
+    margin-top: 50px;
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#big-icon {
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    left: -50%;
+}
+
+#headline {
+    margin: 20px 0px 0px 20px;
+    font-size: 30px;
+    float: left;
+    color: black;
+    position: relative;
+    left: -50%;
+}
+
+#user-nav {
+    margin: 30px 0px 0px 0px;
+    width: 390px;
+    height: 45px;
+    clear: both;
+    overflow: hidden;
+}
+
+#twitter-login-button {
+    float: left;
+    margin: 0px 11px 0px 3px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 15px 10px 45px;
+    cursor: pointer;
+    background:
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -moz-linear-gradient(
+        top,
+        #1fa2ff 0%,
+        #0a5db0);
+    background:
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#1fa2ff),
+        to(#0a5db0));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 0px solid #003366;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#twitter-login-button:hover {
+    float: left;
+    margin: 0px 11px 0px 3px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 15px 10px 45px;
+    background:
+    url(../images/twitbird.png) no-repeat 10px 7px,
+    -moz-linear-gradient(
+        top,
+        #88c6f2 0%,
+        #467fb8);
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#88c6f2),
+        to(#467fb8));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 0px solid #003366;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#facebook-login-button {
+    float: left;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 15px 10px 35px;
+    cursor: pointer;
+    background:
+    url(../images/facebook.png) no-repeat 13px 4px,
+    -moz-linear-gradient(
+        top,
+        #1279c7 0%,
+        #003366);
+    background:
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#1279c7),
+        to(#003366));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 0px solid #003366;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#facebook-login-button:hover {
+    float: left;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 15px 10px 35px;
+    background:
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -moz-linear-gradient(
+            top,
+            #4d8cb8 0%,
+            #2b4763);
+    background:
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#4d8cb8),
+            to(#2b4763));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 0px solid #003366;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0),
+        inset 0px 0px 1px rgba(255,255,255,0.6);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#apl-3step {
+    float: left;
+    position: relative;
+    left: 50%;
+    margin-top: 60px;
+    clear: both;
+}
+
+.step-box {
+    position: relative;
+    left: -50%;
+    width: 230px;
+    float: left;
+}
+
+#step1, #step2 {
+    margin-right: 30px;
+}
+
+.step-main-text {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.step-sub-text {
+    font-size: 15px;
+    line-height: 1.4em;
+}
+
+#footer {
+    clear: both;
 }

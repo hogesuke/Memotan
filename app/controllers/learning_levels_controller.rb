@@ -40,4 +40,9 @@ class LearningLevelsController < ApplicationController
     
     redirect_to(learning_levels_path, :notice => "削除に成功しました。")
   end
+
+  def select_max_level
+    max_level = LearningLevel.select_max_level
+    render :json => {:max_level => max_level}
+  end
 end

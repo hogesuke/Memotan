@@ -170,5 +170,15 @@ class WordsController < ApplicationController
     
     return Word.where(:user_id => session[:usr]).count()
   end
+
+  def level_up
+    after_lv = Word.level_up(params[:word_id], session[:usr])
+    render :json => {:after_lv => after_lv}
+  end
+
+  def level_down
+    after_lv = Word.level_down(params[:word_id], session[:usr])
+    render :json => {:after_lv => after_lv}
+  end
   
 end

@@ -3,15 +3,14 @@
         <div class="spelling">
             <%= word_card.spelling %>
         </div>
-        <!-- 2013/04/09 最小リリースのためコメントアウト
         <div class="level-status">
             <span class="level-label">
                 Lv.<%= word_card.learning_level.level %>
             </span>
-            <div class="lvProgressBar">
-            </div>
+            <div class="level-up-btn"></div>
+            <div class="lvProgressBar"></div>
+            <div class="level-down-btn"></div>
         </div>
-        -->
         <% description = word_card.description %>
         <div class="description<%= description.blank? || description == "NULL" ? " blank" : "" %>">
             <% if description.blank? || description == "NULL" %>

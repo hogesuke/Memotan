@@ -11,6 +11,8 @@ ToriatamaAlpha::Application.routes.draw do
  #   end
  # end
 
+  match 'learning_levels/select_max_level', :to => 'learning_levels#select_max_level', :via => :post
+
   match 'login/', :to => 'login#index', :via => :get
   match 'login/logout', :to => 'login#logout', :via => :get
   match 'login/auth', :to => 'login#auth', :via => :post
@@ -23,6 +25,8 @@ ToriatamaAlpha::Application.routes.draw do
   match 'words/:id', :to => 'words#update', :via => :put, :as => 'word'
   match 'words/list', :to => 'words#list', :via => :post
   match 'words/search', :to => 'words#search', :via => :post
+  match 'words/level_up', :to => 'words#level_up', :via => :post
+  match 'words/level_down', :to => 'words#level_down', :via => :post
 
   resources :users do
     member do

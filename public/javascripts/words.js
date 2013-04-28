@@ -44,7 +44,6 @@ WordLoader.prototype.loadWords = function(){
             $('#list #pages').append("<div class='list-page' page='" + data.page + "'></div>");
             $('[page=' + data.page + ']').append(data.html);
             $('#loading-img').html("");
-            //increasePageNum();
         }
     };
 
@@ -65,16 +64,17 @@ WordLoader.prototype.loadWords = function(){
         beforeSend: function(xhr){
             xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
         }
-    });
-    /** 2013/04/09 最小リリースのためコメントアウト
     }).then(function(){
-        loadLevelProgressBar(this.nextPageNumber);
+        loadLevelProgressBar($("[page=" + (wordLoader.getNextPageNum() - 1) + "] .word-card"));
     });
-    **/
 };
 
 WordLoader.prototype.increasePageNum = function() {
     this.nextPageNumber = this.nextPageNumber + 1
+};
+
+WordLoader.prototype.getNextPageNum = function() {
+    return this.nextPageNumber;
 };
 
 var wordLoader;
@@ -84,12 +84,12 @@ var wordLoader;
  */
 $(function(){
 
-    /** 2013/04/09 最小リリースのためコメントアウト **/
-    // loadLevelProgressBar(1);
     wordLoader = new WordLoader(2);
 
     bindBottomAction();
     $().toastmessage({ position: 'top-center', stayTime: 5000 });
+
+    loadLevelProgressBar($("[page=1] .word-card"));
 
     /**
      * wordの新規作成ボタンにclickイベントをバインド。
@@ -417,7 +417,6 @@ $(function(){
             $(".description").css("display", "block");
             $(this).removeClass("open-btn");
             $(this).addClass("close-btn");
-            $(this).children(".icon-text").text("t");
             $("#pages").removeClass("full-close");
             $("#pages").addClass("full-open");
         } else if ($(this).hasClass("close-btn")) {
@@ -425,10 +424,17 @@ $(function(){
             $(".description").css("display", "none");
             $(this).removeClass("close-btn");
             $(this).addClass("open-btn");
-            $(this).children(".icon-text").text("s");
             $("#pages").removeClass("full-open");
             $("#pages").addClass("full-close");
         }
+    });
+
+    $(".level-up-btn").live("click", function() {
+        changeLevel(this, "levelUp");
+    });
+
+    $(".level-down-btn").live("click", function() {
+        changeLevel(this, "levelDown");
     });
 });
 
@@ -506,38 +512,44 @@ function isAlreadySelectedTag(tagLabel, objs){
 /**
  * wordのレベルバーを読み込む。
  */
-function loadLevelProgressBar(targetPage){
+function loadLevelProgressBar($targetObject){
 
     var maxLevel;
     var percentOfIncrease;
 
     $.ajax({
-        url: "/levelup_intervals/select_max_level",
-        type: "GET",
+        url: "/learning_levels/select_max_level",
+        type: "POST",
         timeout: 5000,
         success: function(data){
             maxLevel = Number(data.max_level);
             percentOfIncrease = Math.round(100/maxLevel);
         },
         error: function(){
-                   $('#main-msg-area').html('サーバエラーが発生しました。');
-               }
+            $('#main-msg-area').html('サーバエラーが発生しました。');
+        },
+        beforeSend: function(xhr){
+            xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
+        } 
     }).then(function(){
-        $("[page=" + targetPage + "]" + " .word-card").each(function(){
-            var level = Number($(this).attr("level"));
-
-            var percent;
-            if (level == maxLevel) {
-                percent = 100;
-            } else {
-                percent = percentOfIncrease * level;
-            }
-
-            var $progressbar = $(this).find(".lvProgressBar");
-            $progressbar.progressbar();
-            $progressbar.progressbar("option", "value", percent);
-        });
+       $targetObject.each(function(){
+           draw($(this));
+       });
     });
+
+    function draw($wordCard) {
+        var level = Number($wordCard.attr("level"));
+        var percent;
+        if (level == maxLevel) {
+            percent = 100;
+        } else {
+            percent = percentOfIncrease * level;
+        }
+
+        var $progressbar = $wordCard.find(".lvProgressBar");
+        $progressbar.progressbar();
+        $progressbar.progressbar("option", "value", percent);
+    }
 }
 
 /**
@@ -577,4 +589,35 @@ function blockEnter(evt){
     } else {
         return true;
     }
+}
+
+/**
+ * ワードのレベルアップ/ダウンを行う。
+ */
+function changeLevel(context, method) {
+
+    var wordId = parseInt($(context).closest('div .word-card').attr('word-id'));
+    var param = {
+        'word_id': wordId
+    };
+
+    $.ajax({
+        url: method == 'levelUp' ? '/words/level_up' : '/words/level_down',
+        type: 'POST',
+        data: param,
+        timeout: 5000,
+        jsonp: 'callback',
+        success: function(data){
+            $wordCard = $("[word-id=" + wordId + "]");
+            $wordCard.attr("level", data.after_lv);
+            $wordCard.find(".level-label").text("Lv." + Number(data.after_lv));
+            loadLevelProgressBar($wordCard);
+        },
+        error: function(){
+            $().toastmessage('showErrorToast', '単語の取得に失敗しました。一度、ページを更新してください。');
+        },
+        beforeSend: function(xhr){
+            xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
+        }
+    });
 }
