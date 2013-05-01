@@ -308,7 +308,7 @@ a:focus {
     float: left;
 }
 
-#user-icon {
+#user-icon img {
     max-width: 25px;
     max-height: 25px;
     -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
@@ -397,12 +397,14 @@ a:focus {
     color: #ffffff;
     padding: 10px 15px 10px 45px;
     background:
-    url(../images/twitbird.png) no-repeat 10px 7px,
-    -moz-linear-gradient(
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -moz-linear-gradient(
         top,
         #88c6f2 0%,
         #467fb8);
-    background: -webkit-gradient(
+    background:
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -webkit-gradient(
         linear, left top, left bottom, 
         from(#88c6f2),
         to(#467fb8));
