@@ -93,7 +93,9 @@ a:focus {
 
 #tag-list-header {
     background-image: -moz-linear-gradient(top, #FEFEFE, #F0F0F0);
+    background-image: -o-linear-gradient(top, #FEFEFE, #F0F0F0);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FEFEFE), color-stop(1.0, #F0F0F0));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyNDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNGMEYwRjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyNDQpIiAvPgo8L3N2Zz4=);<![endif]-->
     background-color: #ffffff;
     margin: 3px 4px 0px 4px;
     padding: 3px 5px 3px 5px;
@@ -145,7 +147,9 @@ a:focus {
 
 #about {
     background-image: -moz-linear-gradient(top, #FEFEFE, #F0F0F0);
+    background-image: -o-linear-gradient(top, #FEFEFE, #F0F0F0);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FEFEFE), color-stop(1.0, #F0F0F0));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyNDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNGMEYwRjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyNDQpIiAvPgo8L3N2Zz4=);<![endif]-->
     background-color: #ffffff;
     margin: 3px 4px 0px 4px;
     padding: 3px 5px 3px 5px;
@@ -362,16 +366,14 @@ a:focus {
     cursor: pointer;
     background:
         url(../images/twitbird.png) no-repeat 10px 7px,
-        -moz-linear-gradient(
-        top,
-        #1fa2ff 0%,
-        #0a5db0);
+        -moz-linear-gradient(top,#1fa2ff 0%,#0a5db0);
     background:
         url(../images/twitbird.png) no-repeat 10px 7px,
-        -webkit-gradient(
-        linear, left top, left bottom, 
-        from(#1fa2ff),
-        to(#0a5db0));
+        -o-linear-gradient(top,#1fa2ff 0%,#0a5db0);
+    background:
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -webkit-gradient(linear, left top, left bottom, from(#1fa2ff), to(#0a5db0));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyNjYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxRkEyRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwQTVEQjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyNjYpIiAvPgo8L3N2Zz4=);<![endif]-->
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -398,16 +400,14 @@ a:focus {
     padding: 10px 15px 10px 45px;
     background:
         url(../images/twitbird.png) no-repeat 10px 7px,
-        -moz-linear-gradient(
-        top,
-        #88c6f2 0%,
-        #467fb8);
+        -moz-linear-gradient(top, #88c6f2 0%, #467fb8);
     background:
         url(../images/twitbird.png) no-repeat 10px 7px,
-        -webkit-gradient(
-        linear, left top, left bottom, 
-        from(#88c6f2),
-        to(#467fb8));
+        -o-linear-gradient(top, #88c6f2 0%, #467fb8);
+    background:
+        url(../images/twitbird.png) no-repeat 10px 7px,
+        -webkit-gradient(linear, left top, left bottom, from(#88c6f2), to(#467fb8));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyODciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM4OEM2RjIiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM0NjdGQjgiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyODcpIiAvPgo8L3N2Zz4=);<![endif]-->
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -433,17 +433,15 @@ a:focus {
     padding: 10px 15px 10px 35px;
     cursor: pointer;
     background:
-    url(../images/facebook.png) no-repeat 13px 4px,
-    -moz-linear-gradient(
-        top,
-        #1279c7 0%,
-        #003366);
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -moz-linear-gradient(top, #1279c7 0%, #003366);
     background:
         url(../images/facebook.png) no-repeat 13px 4px,
-        -webkit-gradient(
-        linear, left top, left bottom, 
-        from(#1279c7),
-        to(#003366));
+        -o-linear-gradient(top, #1279c7 0%, #003366);
+    background:
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -webkit-gradient(linear, left top, left bottom, from(#1279c7), to(#003366));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyMjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxMjc5QzciIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwMDMzNjYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyMjUpIiAvPgo8L3N2Zz4=);<![endif]-->
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -469,16 +467,14 @@ a:focus {
     padding: 10px 15px 10px 35px;
     background:
         url(../images/facebook.png) no-repeat 13px 4px,
-        -moz-linear-gradient(
-            top,
-            #4d8cb8 0%,
-            #2b4763);
+        -moz-linear-gradient(top, #5298c7 0%, #3e668f);
     background:
         url(../images/facebook.png) no-repeat 13px 4px,
-        -webkit-gradient(
-            linear, left top, left bottom, 
-            from(#4d8cb8),
-            to(#2b4763));
+        -o-linear-gradient(top, #5298c7 0%, #3e668f);
+    background:
+        url(../images/facebook.png) no-repeat 13px 4px,
+        -webkit-gradient(linear, left top, left bottom, from(#5298c7), to(#3e668f));
+    <!--[if gte IE 6 ]>background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczNjMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM0RDhDQjgiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMyQjQ3NjMiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czNjMpIiAvPgo8L3N2Zz4=);<![endif]-->
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
