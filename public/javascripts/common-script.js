@@ -38,7 +38,13 @@ $(function(){
             $(".selected-tag").removeClass("selected-tag");
             $("[tag-id=-1]").addClass("selected-tag");
 
-            wordLoader = new WordLoader(1, -1, $("#search-box").val());
+            wordLoader = new WordLoader(
+                1,
+                -1,
+                $("#search-box").val(),
+                $('.sort-selected').attr('sort-key'),
+                $('.sort-selected').attr('order')
+                );
             wordLoader.loadWords().then(function(){
                 bindBottomAction();
             });

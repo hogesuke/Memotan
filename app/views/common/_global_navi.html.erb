@@ -10,11 +10,15 @@
         <div id="tool-holder">
             <ul>
                 <li>
-                <div id="create-word-btn" class="tool-btn web-icon-fontello">
-                </div>
+                    <div id="create-word-btn" class="tool-btn">
+                    </div>
                 </li>
                 <li>
-                    <div id="list-switch-btn" class="tool-btn web-icon-fontello open-btn">
+                    <div id="list-switch-btn" class="tool-btn open-btn">
+                    </div>
+                </li>
+                <li>
+                    <div id="sort-btn" class="tool-btn open-btn">
                     </div>
                 </li>
                 <li>
@@ -37,6 +41,20 @@
                 <li>
                     <%= link_to "ログアウト", { :controller => "login", :action => 'logout' } %>
                 </li>
+            </ul>
+        </div>
+    </div>
+    <div id="sort-nav-holder">
+        <div id="sort-nav">
+            <ul>
+                <li><a href="javascript:void(0)" sort-key="spelling" order="asc"><span>ワードの昇順</span></a></li>
+                <li><a href="javascript:void(0)" sort-key="spelling" order="desc"><span>ワードの降順</span></a></li>
+                <li class="separator">|</li>
+                <li><a href="javascript:void(0)" sort-key="level" order="desc"><span>レベルが高い順</span></a></li>
+                <li><a href="javascript:void(0)" sort-key="level" order="asc"><span>レベルが低い順</span></a></li>
+                <li class="separator">|</li>
+                <li><a href="javascript:void(0)" sort-key="created_at" order="desc" class="sort-selected"><span>登録が新しい順</span></a></li>
+                <li><a href="javascript:void(0)" sort-key="created_at" order="asc"><span>登録が古い順</span></a></li>
             </ul>
         </div>
     </div>

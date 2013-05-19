@@ -1,4 +1,5 @@
 /**
+ *
  * WordsViewで使用するJavaScript。
  *
  * @author hogesuke
@@ -6,10 +7,12 @@
 
 var LOAD_COUNT_PER_PAGE = 3;
 
-var WordLoader = function(startPage, tagId, searchKey){
+var WordLoader = function(startPage, tagId, searchKey, sortKey, order){
     this.nextPageNumber = startPage;
     this.tagId = tagId;
     this.searchKey = searchKey;
+    this.sortKey = sortKey;
+    this.order = order;
 };
 
 /**
@@ -34,7 +37,19 @@ WordLoader.prototype.loadWords = function(){
         param['search_key'] = this.searchKey;
     }
 
-    var action = function(increasePageNum) {
+    if (typeof this.sortKey !== "undefined" &&
+            typeof this.order !== "undefined" &&
+            this.sortKey.match(/spelling|level|created_at/) &&
+            this.order.match(/asc|desc/)) {
+        param['sort_key'] = this.sortKey;
+        param['order'] = this.order;
+    }
+
+    if (typeof this.searchKey !== "undefined") {
+        param['search_key'] = this.searchKey;
+    }
+
+    var aplly = function(increasePageNum) {
         return function(data) {
             if (data.status == 'completed') {
                 $(window).unbind("bottom");
@@ -57,7 +72,7 @@ WordLoader.prototype.loadWords = function(){
         type: 'POST',
         data: param,
         timeout: 5000,
-        success: action(this.increasePageNum),
+        success: aplly(this.increasePageNum),
         error: function(){
             $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。再度、ページを更新してください。');
         },
@@ -377,26 +392,14 @@ $(function(){
         
         var tagId = $(this).attr('tag-id');
         
-        wordLoader = new WordLoader(1, tagId);
+        wordLoader = new WordLoader(1,
+            tagId,
+            undefined,
+            $('.sort-selected').attr('sort-key'),
+            $('.sort-selected').attr('order')
+            );
         wordLoader.loadWords().then(function(){
             bindBottomAction();
-        });
-    });
-
-    /**
-     * 検索ボタンにclickイベントをバインド。
-     */
-    $('#search-btn').live('click', function(){
-    
-        $(window).unbind("bottom");
-        $('#list #pages').empty();
-        
-        $(".selected-tag").removeClass("selected-tag");
-        $("[tag-id=-1]").addClass("selected-tag");
-        
-        var searchKey = $("#search-box").val();
-        ajaxList(1, -1, searchKey).then(function(){
-            bindBottomAction(searchKey);
         });
     });
 
@@ -435,6 +438,56 @@ $(function(){
 
     $(".level-down-btn").live("click", function() {
         changeLevel(this, "levelDown");
+    });
+
+    /**
+     * ソートナビ表示スイッチにclickイベントをバインド。
+     */
+    $("#sort-btn").live("click", function(){
+    
+        if ($(this).hasClass("open-btn")) {
+        
+            $("#sort-nav-holder").slideDown(200);
+            $(this).removeClass("open-btn").addClass("close-btn");
+        } else if ($(this).hasClass("close-btn")) {
+        
+            $("#sort-nav-holder").slideUp(200);
+            $(this).removeClass("close-btn").addClass("open-btn");
+        }
+    });
+
+    $(".level-up-btn").live("click", function() {
+        changeLevel(this, "levelUp");
+    });
+
+    $(".level-down-btn").live("click", function() {
+        changeLevel(this, "levelDown");
+    });
+
+    /**
+     * ソートリンクにclickイベントをバインド。
+     */
+    $('#sort-nav a').live("click", function(){
+
+        $(window).unbind("bottom");
+        $('#list #pages').empty();
+
+        wordLoader = new WordLoader(
+            1,
+            $('.selected-tag').attr('tag-id'),
+            undefined,
+            $(this).attr('sort-key'),
+            $(this).attr('order')
+            );
+
+        $('.sort-selected').css({'padding':'8px 13px'});
+        $('.sort-selected').removeClass('sort-selected');
+        $(this).addClass('sort-selected');
+        $(this).css({'padding':'8px 9px'});
+
+        wordLoader.loadWords().then(function(){
+            bindBottomAction();
+        });
     });
 });
 

@@ -19,8 +19,19 @@ class WordsController < ApplicationController
   
   def list
     
-    cond = Word.where(:user_id => session[:usr]).order("created_at DESC")
+    cond = Word.where(:user_id => session[:usr]).joins(:learning_level)
     
+    if params.has_key?("sort_key") && params.has_key?("order")
+
+      if /spelling|level/ =~ params[:sort_key] &&
+        /asc|desc/ =~ params[:order]
+        cond = cond.order("#{params[:sort_key]} #{params[:order]}").order("created_at DESC")
+      elsif /created_at/ =~ params[:sort_key] &&
+        /asc|desc/ =~ params[:order]
+        cond = cond.order("#{params[:sort_key]} #{params[:order]}")
+      end
+    end
+
     if params.has_key?("tag_id")
       cond = cond.joins(:tags).where("tags.id = ?", params[:tag_id].to_i)
     end
