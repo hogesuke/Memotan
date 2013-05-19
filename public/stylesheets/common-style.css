@@ -138,16 +138,19 @@ a:focus {
     color: #2569c7;
 }
 
-#tag-list .tag-link .tag-count {
+#tag-list .tag-count {
     color: #393939;
 }
 
-#tag-list .selected-tag .tag-label {
-    color: #393939;
+#tag-list .selected-tag .tag-label, #tag-list .selected-tag .tag-count{
+    color: #292929;
 }
 
-#tag-list .selected-tag .tag-count {
-    color: #393939;
+#tag-list .selected-tag {
+    background-color: #F4F4F4;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
 }
 
 #about {

@@ -432,10 +432,16 @@ $(function(){
         }
     });
 
+    /**
+     * レベルアップボタンにclickイベントをバインド。
+     */
     $(".level-up-btn").live("click", function() {
         changeLevel(this, "levelUp");
     });
 
+    /**
+     * レベルダウンボタンにclickイベントをバインド。
+     */
     $(".level-down-btn").live("click", function() {
         changeLevel(this, "levelDown");
     });
@@ -454,14 +460,6 @@ $(function(){
             $("#sort-nav-holder").slideUp(200);
             $(this).removeClass("close-btn").addClass("open-btn");
         }
-    });
-
-    $(".level-up-btn").live("click", function() {
-        changeLevel(this, "levelUp");
-    });
-
-    $(".level-down-btn").live("click", function() {
-        changeLevel(this, "levelDown");
     });
 
     /**
@@ -663,7 +661,7 @@ function changeLevel(context, method) {
         success: function(data){
             $wordCard = $("[word-id=" + wordId + "]");
             $wordCard.attr("level", data.after_lv);
-            $wordCard.find(".level-label").text("Lv." + Number(data.after_lv));
+            $wordCard.find(".level-label").text("習得Lv." + Number(data.after_lv));
             loadLevelProgressBar($wordCard);
         },
         error: function(){

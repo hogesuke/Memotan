@@ -267,7 +267,7 @@
 
 .word-card .spelling {
     width: 480px;
-    margin: 0px 0px 7px 0px;
+    margin: 6px 0px 5px 0px;
     font-size: 138.5%;
     float: left;
 }
@@ -347,7 +347,6 @@
 
 .level-status {
     width: 110px;
-    height: 17px;
     padding-top: 1px;
     float: right;
 }
@@ -367,22 +366,50 @@
     margin-top: 3px;
 }
 
-.level-up-btn {
-    float: right;
-    margin-left: 1px;
-    height: 14px;
-    width: 12px;
-    background: url(../images/level_up.png) no-repeat 3px 3px;
-    cursor: pointer;
+.level-control {
+    clear: both;
+    overflow: hidden;
+    margin: 3px 0px 6px 0px;
 }
 
-.level-down-btn {
+.level-control input {
     float: right;
-    margin-right: 1px;
-    height: 14px;
-    width: 12px;
-    background: url(../images/level_down.png) no-repeat 0px 3px;
-    cursor: pointer;
+    color: #969696;
+    font-size: 11px;
+}
+
+.level-control .good {
+    width: 53px;
+    margin-left: 4px;
+    border: 1px solid #969696;
+    background-color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.level-control .bad {
+    width: 53px;
+    border: 1px solid #969696;
+    background-color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.level-control .good:hover {
+    width: 53px;
+    margin-left: 4px;
+    border: 1px solid #cf9090;
+    background-color: #cf9090;
+	color: #ffffff;
+}
+
+.level-control .bad:hover {
+    width: 53px;
+    border: 1px solid #808fd6;
+    background-color: #808fd6;
+	color: #ffffff;
 }
 
 .ui-progressbar-value{

@@ -5,11 +5,13 @@
         </div>
         <div class="level-status">
             <span class="level-label">
-                Lv.<%= word_card.learning_level.level %>
+                習得Lv.<%= word_card.learning_level.level %>
             </span>
-            <div class="level-up-btn"></div>
             <div class="lvProgressBar"></div>
-            <div class="level-down-btn"></div>
+            <div class="level-control">
+                <input type="button" value="b" class="level-up-btn good web-icon-fontello">
+                <input type="button" value="a" class="level-down-btn bad web-icon-fontello">
+            </div>
         </div>
         <% description = word_card.description %>
         <div class="description<%= description.blank? || description == "NULL" ? " blank" : "" %>">
