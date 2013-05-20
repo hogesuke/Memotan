@@ -374,6 +374,7 @@
 
 .level-control input {
     float: right;
+    padding-top: 1px;
     color: #969696;
     font-size: 11px;
 }
@@ -383,18 +384,18 @@
     margin-left: 4px;
     border: 1px solid #969696;
     background-color: #FFFFFF;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .level-control .bad {
     width: 53px;
     border: 1px solid #969696;
     background-color: #FFFFFF;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .level-control .good:hover {
@@ -402,14 +403,14 @@
     margin-left: 4px;
     border: 1px solid #cf9090;
     background-color: #cf9090;
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .level-control .bad:hover {
     width: 53px;
     border: 1px solid #808fd6;
     background-color: #808fd6;
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .ui-progressbar-value{

@@ -11,7 +11,7 @@ function trim(str){
 }
 
 $(function(){
-    var nav = $('#global-nav-holder');
+    var nav = $('#header');
     //navの位置   
     var navTop = nav.offset().top;
     //スクロールするたびに実行
@@ -19,11 +19,9 @@ $(function(){
         var winTop = $(this).scrollTop();
         //スクロール位置がnavの位置より下だったらクラスfixedを追加
         if (winTop >= navTop) {
-            nav.removeClass('absolute');
             nav.addClass('fixed');
         } else if (winTop <= navTop) {
             nav.removeClass('fixed');
-            nav.addClass('absolute');
         }
     });
 });

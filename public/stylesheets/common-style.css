@@ -63,15 +63,17 @@ a:focus {
 }
 
 #header {
-    position: relative;
-    height: 50px;
+    position: fixed;
+    height: 70px;
     width: 100%;
+    overflow: hidden;
 }
 
 #container {
     overflow: hidden;
     width: 900px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 #primary-contents {
@@ -189,7 +191,6 @@ a:focus {
 #sort-nav-holder {
     display: none;
     background-color: #E0E0E0;
-    overflow: hidden;
 }
 
 #global-nav {
@@ -256,9 +257,11 @@ a:focus {
     margin: 5px 0px 0px 3px;
     float: left;
 }
+
 .absolute {
     position: absolute;
 }
+
 .fixed {
     position: fixed;
     top: 0;
