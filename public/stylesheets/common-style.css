@@ -64,7 +64,7 @@ a:focus {
 
 #header {
     position: fixed;
-    height: 70px;
+    /*height: 80px;*/
     width: 100%;
     overflow: hidden;
 }
@@ -192,6 +192,7 @@ a:focus {
     display: none;
     width: 100%;
     background-color: #E0E0E0;
+    overflow: hidden;
 }
 
 #global-nav {
@@ -204,7 +205,6 @@ a:focus {
 #sort-nav {
     margin: 0 auto;
     width: 680px;
-    height: 30px;
 }
 
 #global-nav li, #sort-nav li {
