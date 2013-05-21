@@ -190,6 +190,7 @@ a:focus {
 
 #sort-nav-holder {
     display: none;
+    width: 100%;
     background-color: #E0E0E0;
 }
 
@@ -203,7 +204,7 @@ a:focus {
 #sort-nav {
     margin: 0 auto;
     width: 680px;
-    overflow: hidden;
+    height: 30px;
 }
 
 #global-nav li, #sort-nav li {
