@@ -495,7 +495,7 @@ $(function(){
 function bindPagingTagList(){
     $("#tag-drop-area").pajinate({
         num_page_links_to_display: 4,
-        items_per_page: 8,
+        items_per_page: 7,
         item_container_id: ".tag-content",
         nav_panel_id: ".tag-page-navi",
         nav_label_first: '<<',
