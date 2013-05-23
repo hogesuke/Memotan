@@ -91,10 +91,7 @@
                                         <ul class="tag-content">
                                             <% @tags.each do |tag| %>
                                                 <li class="tag-li">
-                                                <span class="tag-label"><%= tag.label %></span>
-                                                <span>
-                                                    <input type="button" title="追加" class="tag-add-btn" value="">
-                                                </span>
+                                                <a href="javascript:void(0)" class="tag-label"><%= tag.label %></a>
                                                 </li>
                                             <% end %>
                                         </ul>

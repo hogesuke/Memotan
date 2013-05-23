@@ -57,7 +57,9 @@ body {
     *font-size:small;
     * font:x-small;
 }
-
+a {
+    text-decoration: none;
+}
 a:focus {
     outline: none;
 }
@@ -183,9 +185,6 @@ a:focus {
     z-index:1;
     width: 100%;
     padding-top: 3px;
-    -webkit-box-shadow: 1px 1px 3px #808080;
-    -moz-box-shadow: 1px 1px 3px #808080;
-    box-shadow: 1px 1px 3px #808080;
 }
 
 #sort-nav-holder {
@@ -222,7 +221,7 @@ a:focus {
 #sort-nav li a {
     text-decoration: none;
     color: #2B2B2B;
-    padding: 8px 13px;
+    padding: 10px 13px;
     display: block;
 }
 
@@ -241,14 +240,14 @@ a:focus {
 }
 
 #sort-nav-holder .sort-selected {
-    padding: 8px 9px;
+    padding: 10px 9px;
 
 }
 
 #sort-nav-holder .sort-selected span {
     background-color: #2B2B2B;
     color: #FFFFFF;
-    padding: 4px 4px;
+    padding: 2px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;

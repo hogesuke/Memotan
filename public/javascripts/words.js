@@ -352,8 +352,8 @@ $(function(){
     /**
      * タグ追加ボタンにclickイベントをバインド。
      */
-    $('.tag-add-btn').live("click", function(){
-        var label = $(this).closest(".tag-li").find(".tag-label").text();
+    $('#tag-drop-area .tag-li').live("click", function(){
+        var label = $(this).find(".tag-label").text();
         if (isAlreadySelectedTag(label, $("#tag-list-for-form .tag-li .tag-label"))) {
             return;
         }

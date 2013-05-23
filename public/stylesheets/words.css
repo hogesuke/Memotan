@@ -35,7 +35,7 @@
 }
 
 .form-input-col {
-    width: 350px;
+    width: 400px;
 }
 
 .form-label {
@@ -52,18 +52,19 @@
 }
 
 #word_spelling {
-    width: 300px;
+    width: 350px;
 }
 
 #word_description {
-    width: 300px;
-    height: 100px;
+    width: 350px;
+    height: 120px;
     resize: vertical;
 }
 
 #tag-text-box {
-    width: 220px;
+    width: 270px;
     color: #000000;
+    padding-left: 3px;
 }
 
 #tag-text-box.empty {
@@ -72,7 +73,7 @@
 
 #tag-list-for-form {
     border: 1px solid #bfbfbf;
-    width: 300px;
+    width: 350px;
     min-height: 23px;
     height: auto !important; /* IE6用 */
     height: 23px; /* IE6用 */
@@ -127,13 +128,25 @@
     border: 1px solid #bfbfbf;
     padding: 4px 7px 4px 7px;
     width: 200px;
-    height: 155px;
+    height: 175px;
     color: #232323;
+}
+
+#tag-drop-area .tag-li {
+    padding: 2px 0px;
+}
+
+#tag-drop-area .tag-li .tag-label{
+    color: #2569c7;
+}
+
+#tag-drop-area .tag-li .tag-label:hover{
+    text-decoration: underline;
 }
 
 .tag-page-navi {
     position: absolute;
-    top: 135px;
+    top: 155px;
     padding-bottom: 10px;
 }
 
@@ -144,11 +157,11 @@
 .tag-page-navi a {
     padding: 3px 5px;
     margin: 2px;
-    color: #ffffff;
+    color: #15568E;
     text-decoration: none;
     float: left;
     font-size: 11px;
-    background-color: #a4c5e3;
+    background-color: #A4C5E3;
 }
 
 .tag-page-navi .active_page {
@@ -169,26 +182,13 @@
     overflow: hidden;
 }
 
-.tag-add-btn {
-    background: url(../images/tag-add-btn.png) no-repeat 3px 3px;
-    min-width: 13px;
-    min-height: 13px;
-    height: auto !important; /* IE6用 */
-    height: 13px; /* IE6用 */
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    border: none;
-    overflow: hidden;
-}
-
 #form-msg-area {
     padding: 5px 0px 2px 0px;
     margin: 10px 0px 0px 70px;
     min-height: 15px;
     height: auto !important; /* IE6用 */
     height: 15px; /* IE6用 */
-    width: 260px;
+    width: 310px;
     float: left;
 }
 
@@ -202,6 +202,14 @@
     margin: 10px 0px 0px 10px;
     height: 25px;
     float: left;
+}
+
+#wikibtn, #rewikibtn {
+    padding: 1px 3px;
+}
+
+#word_submit {
+    padding: 3px;
 }
 
 #list {
