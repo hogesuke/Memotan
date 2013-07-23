@@ -80,7 +80,8 @@ WordLoader.prototype.loadWords = function(){
             xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
         }
     }).then(function(){
-        loadLevelProgressBar($("[page=" + (wordLoader.getNextPageNum() - 1) + "] .word-card"));
+        var $target = $("[page=" + (wordLoader.getNextPageNum() - 1) + "] .word-card");
+        $target.loadLevelProgressBar();
     });
 };
 
@@ -104,7 +105,7 @@ $(function(){
     bindBottomAction();
     $().toastmessage({ position: 'top-center', stayTime: 5000 });
 
-    loadLevelProgressBar($("[page=1] .word-card"));
+    $("[page=1] .word-card").loadLevelProgressBar();
 
     /**
      * wordの新規作成ボタンにclickイベントをバインド。
@@ -561,49 +562,6 @@ function isAlreadySelectedTag(tagLabel, objs){
 }
 
 /**
- * wordのレベルバーを読み込む。
- */
-function loadLevelProgressBar($targetObject){
-
-    var maxLevel;
-    var percentOfIncrease;
-
-    $.ajax({
-        url: "/learning_levels/select_max_level",
-        type: "POST",
-        timeout: 5000,
-        success: function(data){
-            maxLevel = Number(data.max_level);
-            percentOfIncrease = Math.round(100/maxLevel);
-        },
-        error: function(){
-            $('#main-msg-area').html('サーバエラーが発生しました。');
-        },
-        beforeSend: function(xhr){
-            xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
-        } 
-    }).then(function(){
-       $targetObject.each(function(){
-           draw($(this));
-       });
-    });
-
-    function draw($wordCard) {
-        var level = Number($wordCard.attr("level"));
-        var percent;
-        if (level == maxLevel) {
-            percent = 100;
-        } else {
-            percent = percentOfIncrease * level;
-        }
-
-        var $progressbar = $wordCard.find(".lvProgressBar");
-        $progressbar.progressbar();
-        $progressbar.progressbar("option", "value", percent);
-    }
-}
-
-/**
  * 画面下端までスクロール時のイベントをバインド。
  */
 function bindBottomAction(searchKey){
@@ -662,7 +620,7 @@ function changeLevel(context, method) {
             $wordCard = $("[word-id=" + wordId + "]");
             $wordCard.attr("level", data.after_lv);
             $wordCard.find(".level-label").text("習得Lv." + Number(data.after_lv));
-            loadLevelProgressBar($wordCard);
+            $wordCard.loadLevelProgressBar();
         },
         error: function(){
             $().toastmessage('showErrorToast', '単語の取得に失敗しました。一度、ページを更新してください。');
@@ -672,3 +630,65 @@ function changeLevel(context, method) {
         }
     });
 }
+
+(function($){
+
+    var maxLevel;
+
+    /**
+     * wordのレベルバーを読み込む。
+     */
+    $.fn.loadLevelProgressBar = function() {
+
+        /*
+         * Levelの最大値をDBより取得する。
+         */
+        function selectMaxLevel() {
+            return $.ajax({
+                url: "/learning_levels/select_max_level",
+                type: "POST",
+                timeout: 5000,
+                success: function(data){
+                    maxLevel = Number(data.max_level);
+                },
+                error: function(){
+                    $('#main-msg-area').html('サーバエラーが発生しました。');
+                },
+                beforeSend: function(xhr){
+                    xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
+                } 
+            });
+        }
+
+        /**
+         * プログレスバーを描画する。
+         */
+        function draw(target) {
+            var currentLevel = Number($(target).attr("level"));
+            var percentOfIncrease = Math.round(100/maxLevel);
+            var percent;
+            if (currentLevel == maxLevel) {
+                percent = 100;
+            } else {
+                percent = percentOfIncrease * currentLevel;
+            }
+
+            var $progressbar = $(target).find(".lvProgressBar");
+            $progressbar.progressbar();
+            $progressbar.progressbar("option", "value", percent);
+        }
+
+        // 初回のみ最大レベルを取得する。
+        if (typeof maxLevel === 'undefined') {
+            var _this = this;
+            selectMaxLevel().then(function() {
+                return _this.each(function() {
+                    draw(this);
+                });
+            });
+        }
+        return this.each(function() {
+            draw(this);
+        });
+    }
+})(jQuery);
