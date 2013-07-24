@@ -470,6 +470,7 @@ $(function(){
 
         $(window).unbind("bottom");
         $('#list #pages').empty();
+        $('#new-words').empty();
 
         wordLoader = new WordLoader(
             1,
