@@ -333,6 +333,37 @@
     margin: 0px 5px 0px 0px;
 }
 
+.word-del-bar {
+    width: 606px;
+    position: absolute;
+    text-align: right;
+    color: #ffffff;
+    margtin: 0px;
+    padding: 4px 12px;
+    background: -moz-linear-gradient(left,  rgba(79,79,79,0) 10%, rgba(79,79,79,1) 82%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(10%,rgba(79,79,79,0)), color-stop(82%,rgba(79,79,79,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(79,79,79,0) 10%,rgba(79,79,79,1) 82%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(79,79,79,0) 10%,rgba(79,79,79,1) 82%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(79,79,79,0) 10%,rgba(79,79,79,1) 82%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(79,79,79,0) 10%,rgba(79,79,79,1) 82%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004f4f4f', endColorstr='#4f4f4f',GradientType=1 ); /* IE6-9 */
+}
+
+.word-del-bar span {
+    padding: 0px 10px;
+    color: #ffffff;
+}
+
+.word-del-bar a {
+    color: #4F4F4F;
+    padding: 1px 7px;
+    margin: 0px 2px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #ffffff;
+}
+
 #simplemodal-overlay {
     background-color: #000;
 }

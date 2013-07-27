@@ -166,8 +166,28 @@ $(function(){
      * wordの削除ボタンにclickイベントをバインド。
      */
     $('.word-del-btn').live("click", function(){
-        var deleteCard = $(this).closest('div .word-card');
-        var delete_id = parseInt(deleteCard.attr('word-id'));
+        var $deleteCard = $(this).closest('div .word-card');
+        var $deleteBar = $('<div class="word-del-bar">' +
+                           '<span>delete?</span>' +
+                           '<a class="word-del-ok" href="javascript:void(0)">ok</a>' +
+                           '<a class="word-del-cancel" href="javascript:void(0)">cancel</a></div>');
+        $(this).closest('div .word-card').append($deleteBar);
+        $deleteBar.position({
+            my: 'right bottom',
+            at: 'right bottom',
+            of: $deleteCard
+        });
+        $(this).css('display', 'none');
+        $(this).siblings('.edit-btn').css('display', 'none');
+    });
+
+    /**
+     * wordの削除okボタンにclickイベントをバインド。
+     */
+    $('.word-del-ok').live("click", function(){
+        var $deleteCard = $(this).closest('div .word-card');
+        var delete_id = parseInt($deleteCard.attr('word-id'));
+        $(this).closest('.word-del-bar').remove();
         $.ajax({
             url: '/words/' + delete_id,
             type: 'DELETE',
@@ -175,8 +195,8 @@ $(function(){
             success: function(data){
             
                 if (data.status == "success") {
-                    deleteCard.slideUp("normal", function(){
-                        deleteCard.remove()
+                    $deleteCard.slideUp("normal", function(){
+                        $deleteCard.remove()
                     });
                     return;
                 }
@@ -187,9 +207,16 @@ $(function(){
             beforeSend: function(xhr){
                 xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
             }
-        }).then(function(){
-            bindPagingTagList();
         });
+    });
+
+    /**
+     * wordの削除キャンセルボタンにclickイベントをバインド。
+     */
+    $('.word-del-cancel').live("click", function(){
+        $(this).closest('.word-card').find('.word-del-btn').css('display', 'inline');
+        $(this).closest('.word-card').find('.edit-btn').css('display', 'inline');
+        $(this).closest('.word-del-bar').remove();
     });
 
     /**
@@ -407,8 +434,11 @@ $(function(){
     /**
      * wordカードのスペルにclickイベントをバインド。
      */
-    $(".word-card .word-content .spelling").live("click", function(){
-        $(this).siblings(".description").slideToggle(150);
+    $('.word-card .word-content .spelling').live('click', function(){
+        $(this).siblings('.description').slideToggle(150)
+        $(this).closest('.word-card').find('.word-del-bar').remove();
+        $(this).closest('.word-card').find('.word-del-btn').css('display', 'inline');
+        $(this).closest('.word-card').find('.edit-btn').css('display', 'inline');
     });
 
     /**
@@ -431,6 +461,9 @@ $(function(){
             $("#pages").removeClass("full-open");
             $("#pages").addClass("full-close");
         }
+        $('.word-del-bar').remove();
+        $('.word-card').find('.word-del-btn').css('display', 'inline');
+        $('.word-card').find('.edit-btn').css('display', 'inline');
     });
 
     /**
