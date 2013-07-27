@@ -136,7 +136,7 @@
     padding: 2px 0px;
 }
 
-#tag-drop-area .tag-li .tag-label{
+#tag-drop-area .tag-li .tag-label {
     color: #2569c7;
 }
 
@@ -170,16 +170,18 @@
 }
 
 .tag-del-btn {
-    background: url(../images/tag-x-btn.png) no-repeat 3px 3px;
+    /*background: url(../images/tag-x-btn.png) no-repeat 3px 3px;
     min-width: 13px;
     min-height: 13px;
     height: auto !important; /* IE6用 */
-    height: 13px; /* IE6用 */
-    margin: 0;
+    /*height: 13px; /* IE6用 */
+    /*margin: 0;
     padding: 0;
-    display: inline-block;
+    display: inline;
     border: none;
-    overflow: hidden;
+    overflow: hidden;*/
+    text-decoration: none;
+    color: #232323;
 }
 
 #form-msg-area {

@@ -396,12 +396,6 @@ $(function(){
             $removeTag = $(this).closest(".tag-li");
             $removeTag.fadeOut(150, function(){
                 $removeTag.remove();
-
-                var $tags = $("#tag-list-for-form .tag-li");
-                $tags.remove();
-                $tags.each(function(){
-                    addTagToForm(trim($(this).text()));
-                });
             });
         });
     });
