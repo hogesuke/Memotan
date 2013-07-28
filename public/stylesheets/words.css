@@ -282,6 +282,14 @@
     float: left;
 }
 
+.spelling a {
+    color: #3b3b3b;
+}
+
+.spelling a:hover {
+    text-decoration: underline;
+}
+
 .word-card .description {
     word-wrap: break-word;
     margin: 5px 0px 7px 0px;
