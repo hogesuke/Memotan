@@ -74,7 +74,8 @@ WordLoader.prototype.loadWords = function(){
         timeout: 10000,
         success: aplly(this.increasePageNum),
         error: function(){
-            $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。再度、ページを更新してください。');
+            $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。ページを再読み込みしてください。');
+            $('#loading-img').empty();
         },
         beforeSend: function(xhr){
             xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
