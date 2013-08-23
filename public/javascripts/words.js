@@ -108,6 +108,16 @@ $(function(){
     $("[page=1] .word-card").loadLevelProgressBar();
 
     /**
+     * ナビゲーションバーのボタンを共通clickイベントをバインド。
+     */
+    $('#global-nav-holder .tool-btn, .word-del-btn,.edit-btn, .spelling').click(function(){
+        // 既に表示されている削除バーを片付ける
+        $('.word-del-bar').remove();
+        $('.word-card').find('.word-del-btn').css('display', 'inline');
+        $('.word-card').find('.edit-btn').css('display', 'inline');
+    });
+
+    /**
      * wordの新規作成ボタンにclickイベントをバインド。
      */
     $('#create-word-btn').click(function(){
@@ -172,6 +182,7 @@ $(function(){
                            '<a class="word-del-ok" href="javascript:void(0)">ok</a>' +
                            '<a class="word-del-cancel" href="javascript:void(0)">cancel</a></div>');
         $(this).closest('div .word-card').append($deleteBar);
+
         $deleteBar.position({
             my: 'right bottom',
             at: 'right bottom',
@@ -455,9 +466,6 @@ $(function(){
             $("#pages").removeClass("full-open");
             $("#pages").addClass("full-close");
         }
-        $('.word-del-bar').remove();
-        $('.word-card').find('.word-del-btn').css('display', 'inline');
-        $('.word-card').find('.edit-btn').css('display', 'inline');
     });
 
     /**
