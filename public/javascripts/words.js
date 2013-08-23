@@ -71,7 +71,7 @@ WordLoader.prototype.loadWords = function(){
         url: "/words/list",
         type: 'POST',
         data: param,
-        timeout: 5000,
+        timeout: 10000,
         success: aplly(this.increasePageNum),
         error: function(){
             $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。再度、ページを更新してください。');
