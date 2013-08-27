@@ -111,7 +111,7 @@ $(function(){
     /**
      * ナビゲーションバーのボタンを共通clickイベントをバインド。
      */
-    $('#global-nav-holder .tool-btn, .word-del-btn,.edit-btn, .spelling').click(function(){
+    $('#global-nav-holder .tool-btn, .word-del-btn,.edit-btn, .spelling').live('click', function(){
         // 既に表示されている削除バーを片付ける
         $('.word-del-bar').remove();
         $('.word-card').find('.word-del-btn').css('display', 'inline');
