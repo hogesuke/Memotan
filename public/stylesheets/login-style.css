@@ -453,7 +453,6 @@ body > #container {
 }
 
 #twitter-login-button {
-    float: right;
     margin-top: 50px;
     font-size: 14px;
     color: #ffffff;
@@ -525,7 +524,6 @@ body > #container {
 }
 
 #facebook-login-button {
-    float: right;
     font-size: 14px;
     color: #ffffff;
     margin-top: 10px;
