@@ -1,24 +1,32 @@
 <div id="container">
-    <p style="color: Red">
-        <%= @error %>
-    </p>
+    <div id="memotan-logo">
+        <img src="./images/Memotan.png">
+    </div>
     <div id="login-contents">
         <div id="big-icon">
             <img src="./images/memotan_view_600px.png">
         </div>
         <div id="headline">
-            <div id="big-logo">
-                <img src="./images/Memotan_big_log.png">
+            <div id="main-catch-copy">
+                語学、<br>
+                仕事、<br>
+                資格に、
             </div>
-            <div>
-                単語をおぼえるためのアプリ
+            <div id="sub-catch-copy">
+                単語をメモするアプリ。
             </div>
             <div id="user-nav">
                 <form action="/auth/twitter" method="GET">
-                    <input type="submit" id="twitter-login-button" value="Twitterでログイン">
+                    <div id="twitter-login-button" class="login-button">
+                        <div class="web-icon-fontello social-login-icon">l</div>
+                        <div class="login-text">Twitterでログイン</div>
+                    </div>
                 </form>
                 <form action="/auth/facebook" method="GET">
-                    <input type="submit" id="facebook-login-button" value="facebookでログイン">
+                    <div id="facebook-login-button" class="login-button">
+                        <div class="web-icon-fontello social-login-icon" class="">m</div>
+                        <div class="login-text">facebookでログイン</div>
+                    </div>
                 </form>
             </div>
         </div>

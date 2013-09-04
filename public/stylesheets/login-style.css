@@ -409,7 +409,7 @@ body > #container {
 
 #login-contents {
     background-color: #FFFFFF;
-    margin-top: 50px;
+    margin-top: 3px;
     padding: 30px 0px;
     clear: both;
     overflow: hidden;
@@ -437,12 +437,25 @@ body > #container {
     image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
 }
 
+#memotan-logo {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
 #headline {
-    margin: 120px 0px 0px 50px;
-    font-size: 13px;
+    margin: 25px 0px 0px 50px;
     float: left;
     color: black;
     text-align: right;
+}
+
+#main-catch-copy {
+    font-size: 34px;
+}
+
+#sub-catch-copy {
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 #headline img {
@@ -452,25 +465,41 @@ body > #container {
     image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
 }
 
-#twitter-login-button {
-    margin-top: 50px;
+.login-button {
+    overflow: hidden;
     font-size: 14px;
+    text-align: left;
     color: #ffffff;
-    padding: 10px 15px 10px 45px;
+    padding: 8px 15px;
     cursor: pointer;
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -moz-linear-gradient(top,#1fa2ff 0%,#0a5db0);
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -o-linear-gradient(top,#1fa2ff 0%,#0a5db0);
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -webkit-gradient(linear, left top, left bottom, from(#1fa2ff), to(#0a5db0));
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     border: 0px solid #003366;
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.social-login-icon {
+    float: left;
+    width: 30px;
+    margin-left: 5px;
+}
+
+.login-text {
+    float: right;
+    color: #ffffff;
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#twitter-login-button {
+    margin-top: 50px;
+    background: -moz-linear-gradient(top,#1fa2ff 0%,#0a5db0);
+    background: -o-linear-gradient(top,#1fa2ff 0%,#0a5db0);
+    background: -webkit-gradient(linear, left top, left bottom, from(#1fa2ff), to(#0a5db0));
     -moz-box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
@@ -480,68 +509,19 @@ body > #container {
     box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-}
-
-/* IE9 */
-#twitter-login-button:not(:target) {
-    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyNjYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxRkEyRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwQTVEQjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyNjYpIiAvPgo8L3N2Zz4=)\9;
 }
 
 #twitter-login-button:hover {
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -moz-linear-gradient(top, #88c6f2 0%, #467fb8);
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -o-linear-gradient(top, #88c6f2 0%, #467fb8);
-    background:
-        url(../images/twitbird.png) no-repeat 10px 7px,
-        -webkit-gradient(linear, left top, left bottom, from(#88c6f2), to(#467fb8));
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 0px solid #003366;
-    -moz-box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    -webkit-box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-}
-
-/* IE9 */
-#twitter-login-button:hover:not(:target) {
-    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyODciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM4OEM2RjIiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM0NjdGQjgiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyODcpIiAvPgo8L3N2Zz4=)\9;
+    background: -moz-linear-gradient(top, #88c6f2 0%, #467fb8);
+    background: -o-linear-gradient(top, #88c6f2 0%, #467fb8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#88c6f2), to(#467fb8));
 }
 
 #facebook-login-button {
-    font-size: 14px;
-    color: #ffffff;
     margin-top: 10px;
-    padding: 10px 15px 10px 35px;
-    cursor: pointer;
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -moz-linear-gradient(top, #1279c7 0%, #003366);
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -o-linear-gradient(top, #1279c7 0%, #003366);
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -webkit-gradient(linear, left top, left bottom, from(#1279c7), to(#003366));
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 0px solid #003366;
+    background: -moz-linear-gradient(top, #1279c7 0%, #003366);
+    background: -o-linear-gradient(top, #1279c7 0%, #003366);
+    background: -webkit-gradient(linear, left top, left bottom, from(#1279c7), to(#003366));
     -moz-box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
@@ -551,47 +531,12 @@ body > #container {
     box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-}
-
-/* IE9 */
-#facebook-login-button:not(:target) {
-    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyMjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxMjc5QzciIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwMDMzNjYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyMjUpIiAvPgo8L3N2Zz4=)\9;
 }
 
 #facebook-login-button:hover {
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -moz-linear-gradient(top, #5298c7 0%, #3e668f);
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -o-linear-gradient(top, #5298c7 0%, #3e668f);
-    background:
-        url(../images/facebook.png) no-repeat 13px 4px,
-        -webkit-gradient(linear, left top, left bottom, from(#5298c7), to(#3e668f));
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 0px solid #003366;
-    -moz-box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    -webkit-box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    box-shadow:
-        0px 1px 3px rgba(000,000,000,0),
-        inset 0px 0px 1px rgba(255,255,255,0.6);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-}
-
-/* IE9 */
-#facebook-login-button:hover:not(:target) {
-    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczNjMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM0RDhDQjgiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMyQjQ3NjMiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czNjMpIiAvPgo8L3N2Zz4=)\9;
+    background: -moz-linear-gradient(top, #5298c7 0%, #3e668f);
+    background: -o-linear-gradient(top, #5298c7 0%, #3e668f);
+    background: -webkit-gradient(linear, left top, left bottom, from(#5298c7), to(#3e668f));
 }
 
 #apl-3step {
