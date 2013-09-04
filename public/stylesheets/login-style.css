@@ -443,8 +443,10 @@ body > #container {
 }
 
 #headline {
-    margin: 25px 25px 0px 0px;
     float: right;
+    position: relative;
+    height: 280px;
+    margin: 20px 20px 0px 0px;
     color: black;
     text-align: right;
 }
@@ -458,11 +460,9 @@ body > #container {
     margin-top: 10px;
 }
 
-#headline img {
-    max-width: 175px;
-    max-height: auto;
-    -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
-    image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
+#user-nav {
+    position: absolute;
+    bottom: 0;
 }
 
 .login-button {
@@ -486,7 +486,6 @@ body > #container {
     float: left;
     font-size: 16px;
     width: 30px;
-    margin-left: 5px;
 }
 
 .login-text {
