@@ -18,7 +18,7 @@
             <% if description.blank? || description == "NULL" %>
                 <%= "(blank)" %>
             <% else %>
-                <%= description %>
+                <%= simple_format(description) %>
             <% end %>
         </div>
     </div>
