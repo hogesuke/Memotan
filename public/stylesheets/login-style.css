@@ -429,14 +429,6 @@ body > #container {
         inset 0px 0px 1px rgba(255,255,255,1);
 }
 
-#big-icon img {
-    /*border: 1px #BFBFBF solid;*/
-    max-width: 600px;
-    max-height: auto;
-    -ms-interpolation-mode:nearest-neighbor; /* IE 7+ */
-    image-rendering: -moz-crisp-edges;       /* Fx, (Gecko 1.9.2) */
-}
-
 #memotan-logo {
     margin-top: 5px;
     margin-left: 5px;
@@ -463,6 +455,7 @@ body > #container {
 #user-nav {
     position: absolute;
     bottom: 0;
+    text-align: right;
 }
 
 .login-button {
@@ -548,10 +541,15 @@ body > #container {
 .step-box {
     color: #FFFFFF;
     width: 260px;
-    height: 170px;
+    height: 200px;
     padding: 20px;
     float: left;
     text-align: center;
+}
+
+.feature-icon {
+    font-size: 25px;
+    margin: 12px 0px;
 }
 
 .step-main-text {
@@ -568,5 +566,5 @@ body > #container {
     clear: both;
     margin: 20px 30px;
     color: #969696;
-    text-align: right;
+    text-align: center;
 }
