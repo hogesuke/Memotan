@@ -511,6 +511,9 @@ body > #container {
     background: -moz-linear-gradient(top, #88c6f2 0%, #467fb8);
     background: -o-linear-gradient(top, #88c6f2 0%, #467fb8);
     background: -webkit-gradient(linear, left top, left bottom, from(#88c6f2), to(#467fb8));
+    background: linear-gradient(#88c6f2, #467fb8);
+    -pie-background: linear-gradient(top, #467fb8, #88c6f2 0%, #467fb8);
+    behavior: url("/stylesheets/PIE.htc");
 }
 
 #facebook-login-button {
@@ -518,6 +521,8 @@ body > #container {
     background: -moz-linear-gradient(top, #1279c7 0%, #003366);
     background: -o-linear-gradient(top, #1279c7 0%, #003366);
     background: -webkit-gradient(linear, left top, left bottom, from(#1279c7), to(#003366));
+    background: linear-gradient(#1279c7, #003366);
+    -pie-background: linear-gradient(top, #003366, #1279c7 0%, #003366);
     -moz-box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
@@ -527,12 +532,16 @@ body > #container {
     box-shadow:
         0px 1px 3px rgba(000,000,000,0),
         inset 0px 0px 1px rgba(255,255,255,0.6);
+    behavior: url("/stylesheets/PIE.htc");
 }
 
 #facebook-login-button:hover {
     background: -moz-linear-gradient(top, #5298c7 0%, #3e668f);
     background: -o-linear-gradient(top, #5298c7 0%, #3e668f);
     background: -webkit-gradient(linear, left top, left bottom, from(#5298c7), to(#3e668f));
+    background: linear-gradient(#5298c7, #3e668f);
+    -pie-background: linear-gradient(top, #3e668f, #5298c7 0%, #3e668f);
+    behavior: url("/stylesheets/PIE.htc");
 }
 
 #apl-3step {
