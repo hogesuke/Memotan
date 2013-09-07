@@ -22,6 +22,7 @@ var WordLoader = function(startPage, tagId, searchKey, sortKey, order){
  */
 WordLoader.prototype.loadWords = function(){
 
+    $('#try-loading-button').css('display', 'none');
     $('#loading-img').html('<img src="/images/ajax-loader.gif">');
 
     var param = {
@@ -54,6 +55,7 @@ WordLoader.prototype.loadWords = function(){
             if (data.status == 'completed') {
                 $(window).unbind("bottom");
                 $('#loading-img').html("");
+                $('#try-loading-button').css('display', 'none');
                 return;
             }
             $('#list #pages').append("<div class='list-page' page='" + data.page + "'></div>");
@@ -76,6 +78,7 @@ WordLoader.prototype.loadWords = function(){
         error: function(){
             $().toastmessage('showErrorToast', '単語一覧の取得に失敗しました。ページを再読み込みしてください。');
             $('#loading-img').empty();
+            $('#try-loading-button').css('display', 'display');
         },
         beforeSend: function(xhr){
             xhr.setRequestHeader("X-CSRF-Token", $("*[name=csrf-token]").attr("content"));
@@ -235,6 +238,10 @@ $(function(){
      * word登録Formの登録ボタンにclickイベントをバインド。
      */
     $('#word_submit').live("click", function(){
+        if ($(this).data('working')) {
+            return false;
+        }
+        $(this).data('working', true);
         $('#form-sending-img').html('<img src="/images/form-loader.gif">');
         $('#form-msg-area').empty();
         $('#create-dialog .validation-error').removeClass('validation-error');
@@ -244,18 +251,18 @@ $(function(){
         var wordSpell = $('#word_spelling').val();
         if (!wordSpell) {
 
-            msgArray.push('単語が入力されていません。');
+            msgArray.push('ワードが入力されていません。');
             $('#word_spelling').addClass('validation-error');
         } else if (25 < wordSpell.length) {
 
-            msgArray.push('単語は25文字以内で入力してください。');
+            msgArray.push('ワードは25文字以内で入力してください。');
             $('#word_spelling').addClass('validation-error');
         }
 
         var wordDescription = $('#word_description').val();
         if (wordDescription && 256 < wordDescription.length) {
 
-            msgArray.push('意味は256文字以内で入力してください。');
+            msgArray.push('説明は256文字以内で入力してください。');
             $('#word_description').addClass('validation-error');
         }
 
@@ -267,6 +274,7 @@ $(function(){
             });
             $('#form-msg-area').append($msgDom);
             $('#form-sending-img').empty();
+            $(this).data('working', false);
             return false;
         }
 
@@ -525,6 +533,22 @@ $(function(){
             bindBottomAction();
         });
     });
+
+    $('#list-footer').live('click', function() {
+        var obj = $(this);
+        if (!obj.data('loading')) {
+        
+            obj.data('loading', true);
+
+            var nextPageNum = parseInt($('#list .list-page:last').attr('page')) + 1;
+            var tag_id = $('.selected-tag').attr('tag-id');
+            
+            wordLoader.loadWords().then(function(){
+                obj.data('loading', false);
+            });
+        }
+    });
+
 });
 
 /**
@@ -621,6 +645,7 @@ function bindBottomAction(searchKey){
             });
         }
     });
+    $('#try-loading-button').css('display', 'block');
 }
 
 /**
