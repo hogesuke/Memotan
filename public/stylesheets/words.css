@@ -230,6 +230,8 @@
     background-image: -moz-linear-gradient(top, #FEFEFE, #F0F0F0);
     background-image: -o-linear-gradient(top, #FEFEFE, #F0F0F0);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FEFEFE), color-stop(1.0, #F0F0F0));
+    background: linear-gradient(#FEFEFE, #F0F0F0);
+    -pie-background: linear-gradient(top, #F0F0F0, #FEFEFE 0%, #F0F0F0);
     background-color: #F0F0F0;
     margin: 0px 10px 0px 10px;
     padding: 12px 10px 12px 10px;
@@ -241,6 +243,7 @@
     border-left: 1px solid #bfbfbf;
     color: #595959;
     font-size: 153.9%;
+    behavior: url("/stylesheets/PIE.htc");
 }
 
 /* IE9 */
