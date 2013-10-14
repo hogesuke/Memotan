@@ -100,5 +100,4 @@ class Word < ActiveRecord::Base
 
     return @@sql_array[key_category][key_select][key_tag]
   end
-
 end
