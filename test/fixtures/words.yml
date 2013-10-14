@@ -4,11 +4,8 @@
   id: 1
   spelling: spell-001
   description: description-001
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-06-17 05:00:00
   last_level_changed_at: 2012-06-17 05:00:00
   created_at: 2012-04-01 00:00:00
 
@@ -16,11 +13,8 @@
   id: 2
   spelling: spell-002
   description: description-002
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-06-16 04:00:00
   last_level_changed_at: 2012-06-16 04:00:00
   created_at: 2012-04-02 00:00:00
 
@@ -28,11 +22,8 @@
   id: 3
   spelling: spell-003
   description: description-003
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-06-15 03:00:00
   last_level_changed_at: 2012-06-15 03:00:00
   created_at: 2012-04-03 00:00:00
 
@@ -40,11 +31,8 @@
   id: 4
   spelling: spell-004
   description: description-004
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-06-14 02:00:00
   last_level_changed_at: 2012-06-14 02:00:00
   created_at: 2012-04-04 00:00:00
 
@@ -52,11 +40,8 @@
   id: 5
   spelling: spell-005
   description: description-005
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-06-13 01:00:00
   last_level_changed_at: 2012-06-13 01:00:00
   created_at: 2012-04-05 00:00:00
 
@@ -64,11 +49,8 @@
   id: 6
   spelling: spell-006
   description: description-006
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-06 00:00:00
   last_level_changed_at: 2012-04-06 00:00:00
   created_at: 2012-04-06 00:00:00
   
@@ -76,11 +58,8 @@
   id: 7
   spelling: spell-007
   description: description-007
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-07 00:00:00
   last_level_changed_at: 2012-04-07 00:00:00
   created_at: 2012-04-07 00:00:00
 
@@ -88,11 +67,8 @@
   id: 8
   spelling: spell-008
   description: description-008
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-08 00:00:00
   last_level_changed_at: 2012-04-08 00:00:00
   created_at: 2012-04-08 00:00:00
 
@@ -100,11 +76,8 @@
   id: 9
   spelling: spell-009
   description: description-009
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-09 00:00:00
   last_level_changed_at: 2012-04-09 00:00:00
   created_at: 2012-04-09 00:00:00
 
@@ -112,11 +85,8 @@
   id: 10
   spelling: spell-010
   description: description-010
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-10 00:00:00
   last_level_changed_at: 2012-04-10 00:00:00
   created_at: 2012-04-10 00:00:00
 
@@ -124,11 +94,8 @@
   id: 11
   spelling: spell-011
   description: description-011
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-11 00:00:00
   last_level_changed_at: 2012-04-11 00:00:00
   created_at: 2012-04-11 00:00:00
 
@@ -136,11 +103,8 @@
   id: 12
   spelling: spell-012
   description: description-012
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-12 00:00:00
   last_level_changed_at: 2012-04-12 00:00:00
   created_at: 2012-04-12 00:00:00
 
@@ -148,11 +112,8 @@
   id: 13
   spelling: spell-013
   description: description-013
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-13 00:00:00
   last_level_changed_at: 2012-04-13 00:00:00
   created_at: 2012-04-13 00:00:00
 
@@ -160,11 +121,8 @@
   id: 14
   spelling: spell-014
   description: description-014
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-14 00:00:00
   last_level_changed_at: 2012-04-14 00:00:00
   created_at: 2012-04-14 00:00:00
 
@@ -172,11 +130,8 @@
   id: 15
   spelling: spell-015
   description: description-015
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-15 00:00:00
   last_level_changed_at: 2012-04-15 00:00:00
   created_at: 2012-04-15 00:00:00
 
@@ -184,11 +139,8 @@
   id: 16
   spelling: spell-016
   description: description-016
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-16 00:00:00
   last_level_changed_at: 2012-04-16 00:00:00
   created_at: 2012-04-16 00:00:00
 
@@ -196,11 +148,8 @@
   id: 17
   spelling: spell-017
   description: description-017
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-17 00:00:00
   last_level_changed_at: 2012-04-17 00:00:00
   created_at: 2012-04-17 00:00:00
 
@@ -208,11 +157,8 @@
   id: 18
   spelling: spell-018
   description: description-018
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-18 00:00:00
   last_level_changed_at: 2012-04-18 00:00:00
   created_at: 2012-04-18 00:00:00
 
@@ -220,11 +166,8 @@
   id: 19
   spelling: spell-019
   description: description-019
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-19 00:00:00
   last_level_changed_at: 2012-04-19 00:00:00
   created_at: 2012-04-19 00:00:00
 
@@ -232,11 +175,8 @@
   id: 20
   spelling: spell-020
   description: description-020
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-20 00:00:00
   last_level_changed_at: 2012-04-20 00:00:00
   created_at: 2012-04-20 00:00:00
 
@@ -244,11 +184,8 @@
   id: 21
   spelling: spell-021
   description: description-021
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-21 00:00:00
   last_level_changed_at: 2012-04-21 00:00:00
   created_at: 2012-04-21 00:00:00
 
@@ -256,11 +193,8 @@
   id: 22
   spelling: spell-022
   description: description-022
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-22 00:00:00
   last_level_changed_at: 2012-04-22 00:00:00
   created_at: 2012-04-22 00:00:00
 
@@ -269,11 +203,8 @@
   id: 23
   spelling: spell-023
   description: description-023
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-23 00:00:00
   last_level_changed_at: 2012-04-23 00:00:00
   created_at: 2012-04-23 00:00:00
 
@@ -281,11 +212,8 @@
   id: 24
   spelling: spell-024
   description: description-024
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-24 00:00:00
   last_level_changed_at: 2012-04-24 00:00:00
   created_at: 2012-04-24 00:00:00
 
@@ -293,11 +221,8 @@
   id: 25
   spelling: spell-025
   description: description-025
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 2
-  last_learned_at: 2012-04-25 00:00:00
   last_level_changed_at: 2012-04-25 00:00:00
   created_at: 2012-04-25 00:00:00
 
@@ -306,10 +231,7 @@
   id: 26
   spelling: spell-026
   description: description-026
-  priority_level_id: 1
   learning_level_id: 1
-  point: 50000
   user_id: 1
-  last_learned_at: 2012-04-26 00:00:00
   last_level_changed_at: 2012-04-26 00:00:00
   created_at: 2012-04-26 00:00:00

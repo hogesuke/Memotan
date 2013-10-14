@@ -1,7 +1,6 @@
 # coding: utf-8
 
 class Word < ActiveRecord::Base
-  belongs_to :priority_level
   belongs_to :learning_level
   belongs_to :user
   has_and_belongs_to_many :tags

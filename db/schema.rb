@@ -10,21 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414115824) do
+ActiveRecord::Schema.define(:version => 20131014205338) do
 
   create_table "learning_levels", :force => true do |t|
-    t.string   "label"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "level"
-  end
-
-  create_table "levelup_intervals", :id => false, :force => true do |t|
-    t.string  "learning_level"
-    t.integer "day_interval"
-  end
-
-  create_table "priority_levels", :force => true do |t|
     t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,17 +26,17 @@ ActiveRecord::Schema.define(:version => 20130414115824) do
     t.integer  "user_id"
   end
 
+  add_index "tags", ["user_id"], :name => "index_tags_on_user_id"
+
   create_table "tags_words", :id => false, :force => true do |t|
     t.integer "tag_id"
     t.integer "word_id"
   end
 
+  add_index "tags_words", ["tag_id"], :name => "index_tags_words_on_tag_id"
+  add_index "tags_words", ["word_id"], :name => "index_tags_words_on_word_id"
+
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "email"
-    t.boolean  "dm"
-    t.string   "roles"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
@@ -58,15 +46,14 @@ ActiveRecord::Schema.define(:version => 20130414115824) do
 
   create_table "words", :force => true do |t|
     t.string   "description"
-    t.integer  "priority_level_id"
-    t.integer  "point"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "learning_level_id"
     t.string   "spelling"
-    t.datetime "last_learned_at"
     t.datetime "last_level_changed_at"
   end
+
+  add_index "words", ["user_id"], :name => "index_words_on_user_id"
 
 end

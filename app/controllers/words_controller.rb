@@ -55,7 +55,6 @@ class WordsController < ApplicationController
   
   def new
     @word = Word.new
-    @priority_levels = PriorityLevel.all
     @tags = Tag.get_tags(session[:usr])
     
     html = render_to_string :partial => 'form'
@@ -65,7 +64,6 @@ class WordsController < ApplicationController
   def edit
     
     @word = Word.find(params[:id])
-    @priority_levels = PriorityLevel.all
     @tags = Tag.get_tags(session[:usr])
     
     html = render_to_string :partial => 'form'
