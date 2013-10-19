@@ -168,7 +168,7 @@ a:focus {
     -pie-background: linear-gradient(top, #F0F0F0, #FEFEFE 0%, #F0F0F0);
     background-color: #ffffff;
     margin: 3px 4px 0px 4px;
-    padding: 3px 5px 3px 5px;
+    padding: 5px 5px 5px 5px;
     -webkit-border-radius: 6px 6px 6px 6px;
     -moz-border-radius: 6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px;
@@ -177,13 +177,18 @@ a:focus {
     behavior: url("/stylesheets/PIE.htc");
 }
 
-/* IE9 */
-#about:not(:target) {
-    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcyNDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNGMEYwRjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cyNDQpIiAvPgo8L3N2Zz4=)\9;
+#about li {
+    margin-bottom: 3px;
 }
+
 #about a {
     text-decoration: none;
     color: #393939;
+}
+
+#about a:hover {
+    text-decoration: underline;
+    color: #2569c7;
 }
 
 #global-nav-holder {
