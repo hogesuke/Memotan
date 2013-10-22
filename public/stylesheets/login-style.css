@@ -410,7 +410,7 @@ body > #container {
 #login-contents {
     background-color: #FFFFFF;
     margin-top: 3px;
-    padding: 30px 0px 40px 0px;
+    padding: 30px 0px 15px 0px;
     clear: both;
     overflow: hidden;
 }
@@ -572,6 +572,21 @@ body > #container {
 .step-sub-text {
     font-size: 15px;
     line-height: 1.4em;
+}
+
+#socialbuttons {
+    clear: both;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 6px 0px 5px 0px;
+}
+
+#socialbuttons div {
+    float: right;
+}
+
+#copyright {
+    clear: both;
 }
 
 #footer {
