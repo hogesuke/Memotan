@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    overflow: scroll;
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: scroll;
+    background-color: #F1F1F1;
+}
+
+body {
+    font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', meiryo, 'メイリオ', sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    *font-size:small;
+    * font:x-small;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+a {
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+
+#header {
+    position: fixed;
+    height: 35px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #2b2b2b;
+}
+
+#container {
+    overflow: hidden;
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+#primary-contents {
+    float: right;
+    width: 650px;
+}
+
+#secondary-contents {
+    float: left;
+    width: 250px;
+}
+
+#header-content {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#header-content {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#memotan-logo {
+    margin-top: 5px;
+    margin-left: 5px;
+}

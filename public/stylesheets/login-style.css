@@ -585,13 +585,20 @@ body > #container {
     float: right;
 }
 
-#copyright {
-    clear: both;
-}
-
 #footer {
     clear: both;
     margin: 20px 30px;
     color: #969696;
     text-align: center;
 }
+
+#footer-menu a, #footer-menu a:link, #footer-menu a:visited {
+    text-decoration: none;
+    color: #969696;
+    margin: 5px; 5px;
+}
+
+#copyright {
+    clear: both;
+}
+
