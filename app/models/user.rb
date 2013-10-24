@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
-    create!do |user|
+    created_user = create!do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
 
@@ -17,5 +17,9 @@ class User < ActiveRecord::Base
         user.name = auth["info"]["nickname"]
       end
     end
+
+    Word.create_tutorial_word(created_user.id)
+
+    return created_user
   end
 end

@@ -65,6 +65,24 @@ class Word < ActiveRecord::Base
     return after_lv[0].level
   end
 
+  def self.create_tutorial_word(user_id)
+
+    Word.transaction do
+      word =self.create!(:user_id => user_id,
+                         :learning_level_id => '1',
+                         :spelling => 'Memotanへようこそ！ここをクリック！',
+                         :description => "ご利用ありがとうございます。\n"\
+                                       + "単語の登録について簡単に使い方を説明します。\n"\
+                                       + "1. ページ上部にあるペンマークのアイコンをクリック\n"\
+                                       + "2. フォームに入力して単語を登録\n"\
+                                       + "3. 一覧表示される単語をおぼえる\n"\
+                                       + "その他にもソートや習得度レベルの設定も可能です。いろいろ試してみてください！"\
+                        )
+      new_tag = Tag.create!(:label => 'tutorial', :user_id => user_id)
+      word.tags << [new_tag]
+    end
+  end
+
   def self.select_learning_words(category, tag_id, isCount, user_id)
 
     enable_tag = tag_id == "all" ? false : true;
