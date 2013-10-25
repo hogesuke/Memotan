@@ -28,7 +28,7 @@
                     <div id="user-info">
                         <div id="user-icon">
                             <% if session[:provider] == "twitter" then %>
-                                <img src="http://api.dan.co.jp/twicon/<%= session[:name] %>/mini">
+                                <img src="http://twiticon.herokuapp.com/<%= session[:name] %>/mini">
                             <% else %>
                                 <img src="https://graph.facebook.com/<%= session[:uid] %>/picture">
                             <% end %>
