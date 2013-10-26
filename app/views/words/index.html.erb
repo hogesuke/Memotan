@@ -29,6 +29,8 @@
     </div>
     <div id='secondary-contents'>
         <%= render :partial => 'tag_list', :locals => {:tags => @tags, :all_words_count => @all_words_count} %>
+        <%= render :partial => 'social' %>
+        <%= render :partial => 'banner' %>
         <%= render :partial => 'about' %>
     </div>
 </div>
