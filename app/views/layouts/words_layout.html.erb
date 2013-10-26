@@ -27,14 +27,17 @@
     </head>
     <body>
         <div id="fb-root"></div>
-        <script>
+        <script type="text/javascript">
+            // FacebookLikeボタン表示に必要なコード
             (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=365501396902232";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) return;
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=365501396902232";
+             fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+            // Facebookでログインした際にURLに#_=_が付くことの対策
+            if (window.location.hash == '#_=_')window.location.hash = '';
         </script>
         <div id="header">
             <%= render :partial=>'common/global_navi' %>
