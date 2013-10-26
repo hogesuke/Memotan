@@ -418,6 +418,9 @@ body > #container {
 #big-icon {
     margin: 0px 10px 0px 20px;
     float: left;
+}
+
+#big-icon img {
     -moz-box-shadow:
         6px 6px 4px rgba(000,000,000,0.3),
         inset 0px 0px 1px rgba(255,255,255,1);
